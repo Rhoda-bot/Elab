@@ -1,0 +1,47 @@
+[
+    {
+        "id": 0,
+        "image": "/images/Resources/playbook1.png",
+        "price": 10000
+    },
+    {
+        "id": 1,
+        "image": "/images/Resources/playbook2.png",
+        "price": 500
+    },
+    {
+        "id": 2,
+        "image": "/images/Resources/playbook3.png",
+        "price": 0
+    },
+    {
+        "id": 3,
+        "image": "/images/Resources/playbook4.png",
+        "price": 200
+    },
+    {
+        "id": 4,
+        "image": "/images/Resources/playbook5.png",
+        "price": 0
+    },
+    {
+        "id": 5,
+        "image": "/images/Resources/playbook6.png",
+        "price": 0
+    },
+    {
+        "id": 6,
+        "image": "/images/Resources/playbook7.png",
+        "price": 800
+    },
+    {
+        "id": 7,
+        "image": "/images/Resources/playbook8.png",
+        "price": 9000
+    },
+    {
+        "id": 8,
+        "image": "/images/Resources/playbook9.png",
+        "price": 0
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "title": "Graphics Design",
+        "text": "We create memorable perceptions of your brand through unorthodox design solutions.",
+        "image": "/images/services/services1.png"
+    },
+    {
+        "id": 1,
+        "title": "Social Media Management",
+        "text": "We create and implement strategies that help deliver the dreams you have for your brand visibility.",
+        "image": "/images/services/services2.png"
+    },
+    {
+        "id": 2,
+        "title": "Software Development",
+        "text": "We create and implement strategies that help deliver the dreams you have for your brand visibility.",
+        "image": "/images/services/services3.png"
+    },
+    {
+        "id": 3,
+        "title": "Branding",
+        "text": "We create and implement strategies that help deliver the dreams you have for your brand visibility.",
+        "image": "/images/services/services4.png"
+    }
+]

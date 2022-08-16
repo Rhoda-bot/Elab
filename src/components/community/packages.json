@@ -1,0 +1,42 @@
+[
+  {
+    "id": "0",
+    "subtitle": "Private Office",
+    "text": "1 Person",
+    "image": "/images/packages/room1.png",
+    "price": 45000,
+    "amt": 65000
+  },
+  {
+    "id": "1",
+    "subtitle": "Private Team Workspace",
+    "text": "2-5 Team members",
+    "image": "/images/packages/room2.png",
+    "price": 45000,
+    "amt": 65000
+  },
+  {
+    "id": "2",
+    "subtitle": "VIP Workspace",
+    "text": "1-5 Person(s)",
+    "image": "/images/packages/room3.png",
+    "price": 45000,
+    "amt": 65000
+  },
+  {
+    "id": "3",
+    "subtitle": "Main Workspace",
+    "text": "1 and above",
+    "image": "/images/packages/room4.png",
+    "price": 45000,
+    "amt": 65000
+  },
+  {
+    "id": "4",
+    "subtitle": "Events, seminars, and workshops space",
+    "text": "10-50 Persons",
+    "image": "/images/packages/room5.png",
+    "price": 45000,
+    "amt": 65000
+  }
+]

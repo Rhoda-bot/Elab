@@ -1,0 +1,50 @@
+[
+    {
+        "id": 0,
+        "name": "Gradeplus-Africa",
+        "description": "GradePlus Africa is  an ed-tech product that teaches African students how to learn and helps them make the right choice of relevant African university courses or career path that is a best fit",
+        "about": "About",
+        "aboutText": "the Startup GradePlus Africa is an EdTech Startup that teaches students and entrepreneurs how to learn and make the right choice of relevant African university courses or career path that is a best fit. GradePlus Africa is presently undergoing incubation at Ennovate Lab, Ogbomoso.",
+        "goal": "   Goals",
+        "goalText": "The overall goal is to see Africa’s human capital potential fully unlocked through improved academic performance and increased career satisfaction. GradePlus Africa is rebuilding a foundation for a better African future with a proposed reach of 400,000 students and professionals, trained in Nigeria by 2025.",
+         "investment": "Investment Opportunity",
+         "investmentText": "Currently open for Investment. Reach out to us.",
+         "image": "/images/program/gradeplus.png"
+    },
+    {
+        "id": 1,
+        "name": "Cogneasy",
+        "description": "Cogneasy is the first productive knowledge exchange to enable diasporan Africans seamlessly remit globally relevant but locally contextualized knowledge to Africans on the continent for rapid workforce development and economic transformation.",
+        "about": "About",
+        "aboutText": "the Startup Cogneasy is the first productive knowledge exchange to enable diasporan Africans seamlessly remit globally relevant but locally contextualized at Ennovate Lab, Ogbomoso.",
+        "goal": "   Goals",
+        "goalText": "The overall goal is to see Africa’s human capital potential fully unlocked through improved academic performance and increased career satisfaction. GradePlus Africa is rebuilding a foundation for a better African future with a proposed reach of 400,000 students and professionals, trained in Nigeria by 2025.",
+         "investment": "Investment Opportunity",
+         "investmentText": "Currently open for Investment. Reach out to us.",
+         "image": "/images/program/cogneasy.png"
+    },
+    {
+        "id": 2,
+        "name": "Trifold",
+        "description": "Trifold is an all-encompassing Christian marriage app that provides highly-curated faith-based answers to knotty relationship issues.",
+        "about": "About",
+        "aboutText": "the Startup Trifold is an all-encompassing Christian marriage app that provides highly-curated faith-based answers to knotty relationship issues.",
+        "goal": "   Goals",
+        "goalText": "The overall goal is to see Africa’s human capital potential fully unlocked through improved academic performance and increased career satisfaction. GradePlus Africa is rebuilding a foundation for a better African future with a proposed reach of 400,000 students and professionals, trained in Nigeria by 2025.",
+         "investment": "Investment Opportunity",
+         "investmentText": "Currently open for Investment. Reach out to us.",
+         "image": "/images/program/trifold.png"
+    },
+    {
+        "id": 3,
+        "name": "Cademy",
+        "description": "Cademy seeks to solve the problem of access to quality education as well as provide a platform for those challenging the traditional way of schooling (those involved in homeschooling).",
+        "about": "About",
+        "aboutText": "access to quality education as well as provide a platform for those challenging the traditional way of schooling",
+        "goal": "   Goals",
+        "goalText": "The overall goal is to see Africa’s human capital potential fully unlocked through improved academic performance and increased career satisfaction. GradePlus Africa is rebuilding a foundation for a better African future with a proposed reach of 400,000 students and professionals, trained in Nigeria by 2025.",
+         "investment": "Investment Opportunity",
+         "investmentText": "Currently open for Investment. Reach out to us.",
+         "image": "/images/program/ctctw.png"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "image": "/images/Resources/blog1.png",
+        "title": "Blog post title stays here and it can take...."
+    },
+    {
+        "id": 1,
+        "image": "/images/Resources/blog2.png",
+        "title": "Blog post title stays here and it can take...."
+    },
+    {
+        "id": 2,
+        "image": "/images/Resources/blog3.png",
+        "title": "Blog post title stays here and it can take...."
+    },
+    {
+        "id": 3,
+        "image": "/images/Resources/blog4.png",
+        "title": "Blog post title stays here and it can take...."
+    },
+    {
+        "id": 4,
+        "image": "/images/Resources/blog5.png",
+        "title": "Blog post title stays here and it can take...."
+    },
+    {
+        "id": 5,
+        "image": "/images/Resources/blog6.png",
+        "title": "Blog post title stays here and it can take...."
+    }
+]

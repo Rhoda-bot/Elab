@@ -1,6 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import STARTUP__SCHEMA from './startup.json';
 
 // OBJ represents each object from the Startup.json file //

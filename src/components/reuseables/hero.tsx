@@ -17,7 +17,7 @@ function Hero({
 }: Props) {
   return (
     <div
-      className="hero"
+      className="hero "
       style={{
         backgroundImage: `linear-gradient(${gradient},${gradient}),url(${bgImage})`,
       }}

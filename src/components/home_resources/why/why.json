@@ -1,0 +1,21 @@
+[
+    {
+        "id": 0,
+        "image": "/images/why/why1.png",
+        "title": "Founder's Community",
+        "text": "Learn More"
+
+    },
+    {
+        "id": 1,
+        "image": "/images/why/why2.png",
+        "title": "Technical Co-founder",
+        "text": "Learn More"
+    },
+    {
+        "id": 2,
+        "image": "/images/why/why3.png",
+        "title": "Skills Seeker",
+        "text": "Learn More"
+    }
+]

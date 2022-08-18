@@ -4,7 +4,7 @@ import React from 'react';
 import Footer from '../reuseables/footer';
 import Hero2 from '../reuseables/hero2';
 import Navbar from '../reuseables/navbar';
-import Testimonials from '../reuseables/testimonial';
+// import Testimonials from '../reuseables/testimonial';
 import Benefits from './benefits';
 import Enterpreneurs from './enterpreneur';
 
@@ -19,10 +19,9 @@ function Programs() {
         button="Join Tyrbe"
         bgImage="/images/about/hero1.png"
         gradient="rgba(6, 0, 22, 0.65)"
-        // gradient2="rgba(6, 0, 22, 0.65)"
       />
       <Benefits />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Enterpreneurs />
       <Footer />
     </>

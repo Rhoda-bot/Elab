@@ -27,6 +27,8 @@ import Blog from './components/home_resources/blog';
 import Ebook from './components/home_resources/ebook';
 import Faq from './components/home_resources/faq';
 import ContactUs from './components/home_resources/contact-us';
+import Whys from './components/home_resources/why';
+import VideoPage from './components/home_resources/why/video';
 
 function RootComponent() {
   return (
@@ -55,6 +57,8 @@ function RootComponent() {
         <Route path="/home_resources/ebook" element={<Ebook />} />
         <Route path="/home_resources/faqs" element={<Faq />} />
         <Route path="/home_resources/contact-us" element={<ContactUs />} />
+        <Route path="/home_resources/Why" element={<Whys />} />
+        <Route path="/home_resources/Why/:id" element={<VideoPage />} />
       </Routes>
     </Router>
   );

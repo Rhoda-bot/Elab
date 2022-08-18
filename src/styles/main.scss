@@ -12,6 +12,17 @@ ul{
     color: #FFCC03;
 }
 // NAVBAR STARTS //
+.dropdown-menu{
+    width: 300px;
+}
+.dropdown-item{
+ box-shadow: 0px 5px 20px rgba(51, 51, 51, 0.1);
+ border-left: 2px solid #FFCC03;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+ }
 .navi{
     background-color: rgba(51, 51, 51, 0.1), #ffffff;
     &__logo{
@@ -342,11 +353,15 @@ ul{
 
 //ENTERPRENEURS START //
 .enterpreneur{
-    padding: 40px;
+    background-color: #ffffff;
     &--text{
         font-size: 30px;
         font-weight: 700;
         color: #060016;
+    }
+    &--img{
+        height: 100%;
+        width: 100%;
     }
 }
 //ENTERPRENEURS ENDS //
@@ -879,6 +894,42 @@ ul{
 }
 // CONTACT US ENDS //
 
+// FOUNDERS STARTS
+.card-img-overlay{
+    background-color: rgba(6, 0, 22, 0.4);
+}
+.founders{
+    &__description{
+        &--title{
+            margin-top: 350px;
+            font-size: 37px;
+            font-weight: 700;
+            
+        }
+    }
+    // &__card{
+    //     background-image: rgba(6, 0, 22, 0.4);
+    //     &--img{
+    //         position: relative;
+    //     }
+    //     &--title{
+    //         position: absolute;
+    //         top: 0;
+    //         bottom: 0;
+    //         margin-top: 150px;
+    //     }
+    //     &
+    // }
+}
+// FOUNDERS ENDS
+
+// VIDEO STARTS //
+.videos{
+    background-color: #060016;
+    color: #ffffff;
+}
+// VIDEO ENDS //
+
 // FOOTER STARTS //
 .footer{
     padding: 30px;
@@ -908,6 +959,17 @@ ul{
     }
     &--btn{
         width:120px;
+    }
+    }
+    .training{
+    &--title{
+        font-size: 1.98rem;
+    }
+    &__description{
+        &--title{
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
     }
     }
     .resources{

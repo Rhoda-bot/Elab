@@ -17,11 +17,45 @@ function Navbar() {
                 <li className="nav-item">
                   <Link to="/about" className="navi--link text-dark nav-link active" aria-current="page">About us</Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="/programs" className="navi--link text-dark nav-link">Program</Link>
+                <li className="nav-item dropdown w-lg-100">
+                  <Link className="navi--link text-dark link nav-link" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Programs
+                  </Link>
+                  <ul className="dropdown-menu border-0 shadow-sm">
+                    <div className="container">
+                      <div className="row g-2">
+                        <div className="col-md-6 p-2">
+                          <li><Link className="dropdown-item" to="/">Action</Link></li>
+                        </div>
+                        <div className="col-md-6 p-2">
+                          <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                        </div>
+                        <div className="col-md-6 p-2 ">
+                          <li><Link className="dropdown-item  border-start border-warning border-end-0 border-top-0 border-bottom-0" to="/">Something else here</Link></li>
+                        </div>
+                      </div>
+                    </div>
+                  </ul>
                 </li>
-                <li className="nav-item">
-                  <Link to="/services" className="navi--link text-dark link nav-link">Services</Link>
+                <li className="nav-item dropdown w-lg-100">
+                  <Link className="navi--link text-dark link nav-link" to="/home_services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Services
+                  </Link>
+                  <ul className="dropdown-menu border-0 shadow-sm">
+                    <div className="container">
+                      <div className="row g-2">
+                        <div className="col-md-6 p-2">
+                          <li><Link className="dropdown-item" to="/">Action</Link></li>
+                        </div>
+                        <div className="col-md-6 p-2">
+                          <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                        </div>
+                        <div className="col-md-6 p-2 ">
+                          <li><Link className="dropdown-item  border-start border-warning border-end-0 border-top-0 border-bottom-0" to="/">Something else here</Link></li>
+                        </div>
+                      </div>
+                    </div>
+                  </ul>
                 </li>
                 <li className="nav-item">
                   <Link to="/resources" className="navi--link text-dark link nav-link">Resources</Link>

@@ -20,9 +20,9 @@ function Hero2({
           backgroundImage: `linear-gradient(${gradient},${gradient}),url(${bgImage})`,
         }}
       >
-        <div className="container">
-          <div className="row text-start">
-            <div className="hero--title">
+        <div className="container py-5">
+          <div className="row text-start py-5">
+            <div className="hero--title pt-5">
               { title && title }
             </div>
             <div className="col-md-6">

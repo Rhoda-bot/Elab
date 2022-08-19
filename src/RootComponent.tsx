@@ -11,9 +11,6 @@ import Programs from './components/program';
 import Community from './components/community';
 import PackageDetails from './components/community/package-details';
 import Payment from './components/community/payment';
-import Startups from './components/community/startups';
-import StartupDetails from './components/community/startup-details';
-import Brochure from './components/community/startup-brochure';
 import Project from './components/community/projects/project';
 import ProjectDetails from './components/community/projects/project-details';
 import Profits from './components/community/profits';
@@ -29,6 +26,9 @@ import Faq from './components/home_resources/faq';
 import ContactUs from './components/home_resources/contact-us';
 import Whys from './components/home_resources/why';
 import VideoPage from './components/home_resources/why/video';
+import Startup from './components/community/startups';
+import StartupDetails from './components/community/startups/startup-details';
+import Brochure from './components/community/startups/startup-brochure';
 
 function RootComponent() {
   return (
@@ -38,16 +38,16 @@ function RootComponent() {
         <Route path={ROUTES.HOMEPAGE_ROUTE} element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/programs" element={<Programs />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/community/packages-details/:id" element={<PackageDetails />} />
-        <Route path="/community/packages-details/:id/payment" element={<Payment />} />
-        <Route path="/community/startups" element={<Startups />} />
-        <Route path="/community/startups/details/:name" element={<StartupDetails />} />
-        <Route path="/community/startups/details/brochure" element={<Brochure />} />
-        <Route path="/community/project" element={<Project />} />
-        <Route path="/community/project-details" element={<ProjectDetails />} />
-        <Route path="/community/profits" element={<Profits />} />
-        <Route path="/home_services/digital-services" element={<Services />} />
+        <Route path="/programs/community" element={<Community />} />
+        <Route path="/programs/packages-details/:id" element={<PackageDetails />} />
+        <Route path="/programs/packages-details/:id/payment" element={<Payment />} />
+        <Route path="/programs/startups" element={<Startup />} />
+        <Route path="/programs/startups/details/:name" element={<StartupDetails />} />
+        <Route path="/programs/startups/details/brochure" element={<Brochure />} />
+        <Route path="/programs/project" element={<Project />} />
+        <Route path="/programs/project-details" element={<ProjectDetails />} />
+        <Route path="/programs/profits" element={<Profits />} />
+        <Route path="/home_services" element={<Services />} />
         <Route path="/home_services/consultation" element={<Consultation />} />
         <Route path="/home_services/consultation/bookings" element={<Booking />} />
         <Route path="/home_services/training" element={<HomeServices />} />

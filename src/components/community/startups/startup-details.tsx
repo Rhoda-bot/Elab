@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Footer from '../../reuseables/footer';
+import Navbar from '../../reuseables/navbar';
 import STARTUP__SCHEMA from './startup.json';
 
 // OBJ represents each object from the Startup.json file //
@@ -22,9 +24,12 @@ function StartupDetails() {
   const paramName: string = param?.name || '';
 
   return (
-    <div className="startupdetails py-4">
-      <div className="container">
-        {
+    <>
+      <Navbar />
+      <div className="startupdetails py-5">
+        <div className="container pt-3">
+          <div className="row">
+            {
             startup?.filter(({ name }) => (name.toString() === paramName)).map(({
               id, name, image, about, aboutText, goal,
               goalText, investment, investmentText,
@@ -66,11 +71,14 @@ function StartupDetails() {
             ))
 
         }
-        <button type="button">
-          <Link to="/community/startups/details/brochure" className="link">Download Brochure</Link>
-        </button>
+          </div>
+          <button type="button" className="payment__card--btn">
+            <Link to="/programs/startups/details/brochure" className="link">Download Brochure</Link>
+          </button>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 export default StartupDetails;

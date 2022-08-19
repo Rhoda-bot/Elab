@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import React from 'react';
-import CircleBg from '../reuseables/circleBg';
 import Footer from '../reuseables/footer';
 import Navbar from '../reuseables/navbar';
 
@@ -10,11 +9,11 @@ function Booking() {
     <>
       <Navbar />
       <div className="booking py-5">
-        <div className="container">
+        <div className="container py-5">
           <div className="row text-center justify-content-center">
             <div className="booking--title">
               Book a
-              <CircleBg text="Session" />
+              <span className="circleBg ps-3 pb-5 pe-5">Session</span>
             </div>
             <p className="booking--text">
               Building a clear path to help our clients deliver
@@ -60,7 +59,7 @@ function Booking() {
                   <textarea className="form-control form-control-lg" />
                 </div>
                 <div className="md-3 pt-5">
-                  <button type="button">Schedule a Call</button>
+                  <button type="button" className="booking--btn">Schedule a Call</button>
                 </div>
               </form>
             </div>

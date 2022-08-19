@@ -15,55 +15,89 @@ function Navbar() {
             <form className="d-flex flex-end ms-auto" role="search">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link to="/about" className="navi--link text-dark nav-link active" aria-current="page">About us</Link>
+                  <Link to="/about" className="navi--link text-dark nav-link active p-2" aria-current="page">About us</Link>
                 </li>
-                <li className="nav-item dropdown w-lg-100">
+                <li className="nav-item dropdown navi__dropdown">
                   <Link className="navi--link text-dark link nav-link" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Programs
                   </Link>
                   <ul className="dropdown-menu border-0 shadow-sm">
                     <div className="container">
                       <div className="row g-2">
-                        <div className="col-md-6 p-2">
-                          <li><Link className="dropdown-item" to="/">Action</Link></li>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item">
+                            <Link className="dropdown-item" to="/programs/community">Community</Link>
+                            <p>A short description stays here</p>
+                          </li>
                         </div>
-                        <div className="col-md-6 p-2">
-                          <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/programs/project">Projects</Link></li>
                         </div>
-                        <div className="col-md-6 p-2 ">
-                          <li><Link className="dropdown-item  border-start border-warning border-end-0 border-top-0 border-bottom-0" to="/">Something else here</Link></li>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/">Innovation Hub</Link></li>
+                        </div>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/programs/profits">None Profits</Link></li>
+                        </div>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/programs/startups">Startup Foundry</Link></li>
                         </div>
                       </div>
                     </div>
                   </ul>
                 </li>
-                <li className="nav-item dropdown w-lg-100">
+                <li className="nav-item dropdown navi__dropdown">
                   <Link className="navi--link text-dark link nav-link" to="/home_services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Services
                   </Link>
-                  <ul className="dropdown-menu border-0 shadow-sm">
+                  <ul className="dropdown-menu border-0 navi__menu">
                     <div className="container">
                       <div className="row g-2">
-                        <div className="col-md-6 p-2">
-                          <li><Link className="dropdown-item" to="/">Action</Link></li>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/home_services/training">Training</Link></li>
                         </div>
-                        <div className="col-md-6 p-2">
-                          <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/home_services/consultation">Consultation</Link></li>
                         </div>
-                        <div className="col-md-6 p-2 ">
-                          <li><Link className="dropdown-item  border-start border-warning border-end-0 border-top-0 border-bottom-0" to="/">Something else here</Link></li>
+                        <div className="col-md-6 ">
+                          <li className="navi__menu--item"><Link className="dropdown-item " to="/home_services/consultation/bookings">Bookings</Link></li>
+                        </div>
+                        <div className="col-md-6 ">
+                          <li className="navi__menu--item"><Link className="dropdown-item " to="/home_services/training-details">Training details</Link></li>
                         </div>
                       </div>
                     </div>
                   </ul>
                 </li>
-                <li className="nav-item">
-                  <Link to="/resources" className="navi--link text-dark link nav-link">Resources</Link>
+                <li className="nav-item dropdown navi__dropdown">
+                  <Link className="navi--link text-dark link nav-link p-2" to="/home_services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Resources
+                  </Link>
+                  <ul className="dropdown-menu border-0 navi__menu">
+                    <div className="container">
+                      <div className="row g-2">
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/home_resources/blog">Blog</Link></li>
+                        </div>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/home_resources/blog-details">Blog details</Link></li>
+                        </div>
+                        <div className="col-md-6">
+                          <li className="navi__menu--item"><Link className="dropdown-item" to="/home_resources/consultation">Ebook</Link></li>
+                        </div>
+                        <div className="col-md-6 ">
+                          <li className="navi__menu--item"><Link className="dropdown-item " to="/">home</Link></li>
+                        </div>
+                      </div>
+                    </div>
+                  </ul>
                 </li>
-                <li className="nav-item">
-                  <Link to="/contact" className="navi--link text-dark link nav-link">Contact Us</Link>
+                <li className="nav-item ">
+                  <Link to="/home_resources/contact-us" className="navi--link text-dark link nav-link p-2">Contact Us</Link>
                 </li>
-                <button className="btn btn-outline-success" type="submit">Search</button>
+                <button className="navi--btn" type="submit">
+                  <li className=""><Link className="dropdown-item " to="/home_resources/Why">Find your Y</Link></li>
+                </button>
               </ul>
             </form>
           </div>

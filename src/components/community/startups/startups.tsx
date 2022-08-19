@@ -2,9 +2,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../reuseables/footer';
-import Navbar from '../reuseables/navbar';
-import Partnering from './partnering';
 import STARTUP__SCHEMA from './startup.json';
 
 // OBJ represents each object from the Startup.json file //
@@ -24,26 +21,24 @@ function Startups() {
   const startup: obj[] = STARTUP__SCHEMA;
 
   return (
-    <>
-      <Navbar />
-      <div className="startup py-4">
-        <div className="container">
-          <div className="row">
-            <div className="startup--title text-center">
-              Our Startup
-              {' '}
-              <br />
-              <span className="circleBg ps-4 pb-4 pe-4">Directory</span>
-            </div>
-            <p className="startup--text text-center">Startups in our foundry</p>
+    <div className="startup py-4">
+      <div className="container">
+        <div className="row">
+          <div className="startup--title text-center">
+            Our Startup
+            {' '}
+            <br />
+            <span className="circleBg ps-4 pb-4 pe-4">Directory</span>
           </div>
-          {
+          <p className="startup--text text-center">Startups in our foundry</p>
+        </div>
+        {
             startup?.map(({
               id, name, description, image,
             }) => (
               <div className="row mx-auto justify-content-center">
                 <div className="col-md-9 text-start p-3">
-                  <Link to={`/community/startups/details/${name}`} key={id} className="link">
+                  <Link to={`/programs/startups/details/${name}`} key={id} className="link">
                     <div className="card border-0 startup__card p-4 shadow-sm">
                       <div className="row g-0">
                         <div className="col-md-4 ">
@@ -63,11 +58,8 @@ function Startups() {
               </div>
             ))
           }
-        </div>
       </div>
-      <Partnering />
-      <Footer />
-    </>
+    </div>
   );
 }
 export default Startups;

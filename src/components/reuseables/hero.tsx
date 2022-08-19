@@ -22,7 +22,7 @@ function Hero({
         backgroundImage: `linear-gradient(${gradient},${gradient}),url(${bgImage})`,
       }}
     >
-      <div className="container">
+      <div className="container py-5">
         <div className="row mx-auto justify-content-center text-center pt-5 align-items-center mt-4 ">
           <div className="col-md-8 hero--title mt-5">
             {
@@ -38,7 +38,7 @@ function Hero({
             {text && text }
 
           </p>
-          <div className="col-md-8">
+          <div className="col-md-8 ">
             { button && <button type="button" className="hero--btn col-sm-3">{button}</button>}
           </div>
         </div>

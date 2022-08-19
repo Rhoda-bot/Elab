@@ -23,7 +23,7 @@ function Packages() {
             }) => (
               <div className="col-md-4 p-2" key={id}>
                 <div className="card border-0 packages__card p-2">
-                  <Link to={`/community/packages-details/${id}`}>
+                  <Link to={`/programs/packages-details/${id}`}>
                     <img src={image} className="card-img-top packages__card--img" alt="" />
                   </Link>
                   <div className="card-body text-start shadow-sm rounded">

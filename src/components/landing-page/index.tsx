@@ -10,6 +10,7 @@ import Navbar from '../reuseables/navbar';
 import Ourstory from '../reuseables/ourstory';
 import Partners from '../reuseables/partners';
 import Trainings from '../reuseables/trainings';
+import WorkSpaces from '../reuseables/workspaces';
 
 function Home() {
   return (
@@ -27,6 +28,7 @@ function Home() {
       />
       <Ourstory />
       <Measures />
+      <WorkSpaces />
       <Partners />
       <Events />
       <Media />

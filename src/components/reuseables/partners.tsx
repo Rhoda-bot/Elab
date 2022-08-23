@@ -8,7 +8,7 @@ function Partners() {
       <div className="container">
         <div className="mx-auto text-center ">
           <span className="partners--logo ps-4 pb-5 pe-4 text-center p-3 ">Our Partners</span>
-          <p className="pt-4">
+          <p className="pt-4 partners--text">
             We are always looking for other organizations who are doing good
             <br />
             in the world and are proud to be associated with them.
@@ -33,19 +33,18 @@ function Partners() {
         </div>
         <div className="row partners__description text-start mx-auto">
           <div className="partners__description--title">eLab Musing</div>
-          <div className="col-md-6">
-            <p className="partners__description--text pb-3">
+          <div className="col-md-7">
+            <p className="partners--text pb-3 text-white">
               Lets share with you some information about the Lab as noteworthy
-              <br />
               business insights from lived-experiences as an organization.
             </p>
             <form>
               <div className="row g-3 ">
                 <div className="col-md-3">
-                  <input type="text" className="form-control p-2" placeholder="your name" />
+                  <input type="text" className="form-control partners__description--inp  p-2" placeholder="your name" />
                 </div>
                 <div className="col-md-5">
-                  <input type="text" className="form-control p-2" placeholder="your email address" />
+                  <input type="text" className="form-control partners__description--inp p-2" placeholder="your email address" />
                 </div>
                 <div className="col-md-3 ml-3">
                   <button type="button" className="partners__description--btn">Subscribe</button>

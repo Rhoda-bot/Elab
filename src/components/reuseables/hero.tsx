@@ -22,7 +22,7 @@ function Hero({
         backgroundImage: `linear-gradient(${gradient},${gradient}),url(${bgImage})`,
       }}
     >
-      <div className="container py-5">
+      <div className="container">
         <div className="row mx-auto justify-content-center text-center pt-5 align-items-center mt-4 ">
           <div className="col-md-8 hero--title mt-5">
             {

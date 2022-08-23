@@ -1,4 +1,4 @@
-// @import './_variables';
+@import './_variables';
 
 // =flexbox($justify:$justify, $align:, $direction:, $wrap:);
 //   display: flex;
@@ -22,7 +22,6 @@
 //   @if $class == '<tablet'
 //     @media (max-width: $tablet-size)
 //       @content
-
 //   @if $class == '<desktop'
 //     @media (max-width: $desktop-size)
 //       @content
@@ -30,3 +29,20 @@
 //   @if $class == '>desktop'
 //     @media (min-width: $desktop-size)
 //       @content
+
+@mixin Btn ($padSize, $width, $height, $fontWeight) {
+        background-color: #FFCC03;
+        border-radius: 5px;
+        border-color:  none;
+        color: #060016;
+        border: none;
+        box-shadow: border-box;
+        height: $height;
+        padding: $padSize;
+        width: $width;
+        font-weight: $fontWeight;
+}
+@mixin  BtnHover {
+        background-color: #BE9800;
+        color: #ffffff; 
+}

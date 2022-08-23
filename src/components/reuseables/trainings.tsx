@@ -9,13 +9,11 @@ function Trainings() {
       <div className="container">
         <div className="row">
           <div className="training--title text-center">Training Opportunities</div>
-          <p className="training--text text-center">
+          <p className="training--text text-center mb-4">
             The beautiful thing about learning is that nobody can take it away from you. And
             <br />
             thats why we cant stop delivering exceptional training for all our stakeholders...
           </p>
-        </div>
-        <div className="row">
           <div className="col-md-6">
             <div className="bg-white">
               <Cards title="Header text for training title stays here" text="Lorem ipsum dolor sit amet consectetur adipisicing elit." />

@@ -15,6 +15,17 @@ function Teams() {
             the community.
           </p>
         </div>
+        <div className="row">
+            <div className="col-md-12">
+              <img src="/images/about/abouta.png" alt="" />
+            </div>
+            <div className="col-md-12">
+              <img src="/images/about/aboutb.png" alt="" />
+            </div>
+            <div className="col-md-12">
+              <img src="/images/about/aboutc.png" alt="" />
+            </div>
+        </div>
       </div>
     </div>
   );

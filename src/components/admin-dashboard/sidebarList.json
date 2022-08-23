@@ -1,0 +1,80 @@
+[
+    {
+        "id": 0,
+        "title": "Impact",
+        "icon": "fa-solid fa-house fa-fw"
+    },
+    {
+        "id": 1,
+        "title": "Partners",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 2,
+        "title": "Events",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 3,
+        "title": "Media Mentio",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 4,
+        "title": "Consultation",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 5,
+        "title": "Cowork",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 6,
+        "title": "Training",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 7,
+        "title": "Blog",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 8,
+        "title": "Resources",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 9,
+        "title": "Projects",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 10,
+        "title": "Non-profits",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 11,
+        "title": "Startup Foundary",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    },
+    {
+        "id": 12,
+        "title": "FAQ",
+        "icon": "fa-solid fa-people-line fa-fw"
+     
+    }
+    
+]

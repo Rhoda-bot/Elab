@@ -491,6 +491,16 @@ ul{
         top: 2337.00390625px;
 
     }
+    &--subtitle{
+        padding-top: 60px;
+        top: 0;
+        bottom: 0;
+        text-align: start;
+        margin-left: 30px;  
+        color: #ffffff;
+        font-size: 42px;
+        
+    }
 }
 // WORKSPACE ENDS //
 
@@ -504,11 +514,19 @@ ul{
         font-size: 20px;
         color: #4F4F4F;
     }
+    // &__description{
+    //     height: 500px;
+       
+    // }
     &__card{
+        box-shadow: 1px 1px 1px rgba(0, 24, 8, 0.15);
         &--img{
             background: linear-gradient(rgba(4, 0, 13, 0.75)
             rgba(4, 0, 13, 0.1));
             cursor: pointer;
+        }
+        &--body{
+            background-color: red;
         }
         &--subtitle{
             color: #060016;
@@ -710,11 +728,10 @@ ul{
             font-size: 18px;
         }
         &--btn{
-            background-color: #FFCC03;
-            border: none;
-            padding: 10px;
-            color: #060016;
-            font-weight: 600;
+            @include Btn(10px, 192px, 64px, 600);
+        }
+        &--btn:hover{
+            @include BtnHover;
         }
     }
 }
@@ -779,13 +796,10 @@ ul{
             margin-top: 20px;
         }
         &--btn{
-            margin-top: 30px;
-            width: 192px;
-            padding: 10px;
-            background-color: #FFCC03;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
+            @include Btn(10px, 192px, 64px, 600);
+        }
+        &--btn:hover{
+            @include BtnHover;
         }
     }
 }
@@ -836,12 +850,10 @@ ul{
         font-weight: 700;
     }
     &--btn{
-        width: 192px;
-        padding: 10px;
-        background-color: #FFCC03;
-        border: none;
-        border-radius: 5px;
-        font-weight: 600;
+        @include Btn(10px, 192px, 64px, 600);
+    }
+    &--btn:hover{
+        @include BtnHover;
     }
 }
 // HEADER ENDS //
@@ -861,12 +873,12 @@ ul{
             color: #060016;
         }
         &--btn{
+            @include Btn(10px, 192px, 64px, 600);
             background-color: 
             #FFF5CF;
-            padding: 10px;
-            width: 192px;
-            border: none;
-            border-radius: 5px;
+        }
+        &--btn:hover{
+            @include BtnHover;
         }
         &--span{
             font-size: 16px;
@@ -903,13 +915,8 @@ ul{
     &__description{
         padding: 40px;
         &--btn{
-            border: none;
-            font-size: 600;
-            color: #060016;
-            background-color: #FFCC03;
-            border-radius: 5px;
+            @include Btn(10px, 192px, 64px, 600);
             margin-left: 24px;
-            padding: 10px;
         }
     }
     &__card{
@@ -934,12 +941,11 @@ ul{
         font-size: 18px;
     }
     &--btn{
-        background-color: #FFCC03;
-        font-weight: 600;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
+        @include Btn(10px, 145px, 64px, 600);
         width: 145px;
+    }
+    &--btn:hover{
+        @include BtnHover;
     }
 }
 
@@ -961,11 +967,10 @@ ul{
             margin-left: 150px;
         }
         &--btn{
-            border: none;
-            border-radius: 5px;
-            background-color: #FFCC03;
-            padding: 10px;
-            font-weight: 600;
+            @include Btn(10px, 192px, 64px, 600);
+        }
+        &--btn:hover{
+            @include BtnHover;
         }
     }
     &__card:hover{
@@ -1000,13 +1005,10 @@ ul{
         font-weight: 700;
     }
     &--btn{
-        color: #060016;
-        padding: 10px;
-        background-color: #FFCC03;
-        border: none;
-        border-radius: 5px;
-        box-sizing: border-box;
-        font-weight: 600;
+        @include Btn(10px, 192px, 64px, 600);
+    }
+    &--btn:hover{
+        @include BtnHover;
     }
 }
 // CONTACT US ENDS //
@@ -1024,19 +1026,6 @@ ul{
             
         }
     }
-    // &__card{
-    //     background-image: rgba(6, 0, 22, 0.4);
-    //     &--img{
-    //         position: relative;
-    //     }
-    //     &--title{
-    //         position: absolute;
-    //         top: 0;
-    //         bottom: 0;
-    //         margin-top: 150px;
-    //     }
-    //     &
-    // }
 }
 // FOUNDERS ENDS
 
@@ -1046,6 +1035,38 @@ ul{
     color: #ffffff;
 }
 // VIDEO ENDS //
+
+// ADMIN DASHBOARD  STARTS// 
+.dashboard{
+    background-color: #F2F2F2;
+    &--changeColor{
+        background-color: #FFCC03;
+        margin: 20px;
+    }
+    &--title{
+        color: #828282;
+    }
+}
+.impact{
+     &--title{
+        font-size: 42px;
+        font-weight: 700;
+        color: #060016;
+        // padding-bottom: 30px
+    }
+    &--btn{
+        @include Btn(5px, 191px, 52px, 600);
+        margin-left: 260px;
+        // margin-top: -30px;
+    }
+    &--btn:hover{
+        @include BtnHover;
+    }
+    &__card{
+        box-shadow: 0px 5px 15px rgba(122, 122, 122, 0.15);
+    }
+}
+// ADMIN DASHBOARD  ENDS// 
 
 // FOOTER STARTS //
 .footer{
@@ -1080,6 +1101,13 @@ ul{
     }
     .ourstory{
         
+    }
+    .impact{
+        &--btn{
+            margin-left: 0;
+            width: 150px;
+            background-color: #060016;
+        }
     }
     .training{
     &--title{

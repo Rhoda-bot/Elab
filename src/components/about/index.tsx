@@ -5,6 +5,7 @@ import Footer from '../reuseables/footer';
 import Hero from '../reuseables/hero';
 import Navbar from '../reuseables/navbar';
 import VisionMission from '../reuseables/visionmission';
+import TimeLine from './graph';
 import Teams from './teams';
 import Values from './values';
 
@@ -16,6 +17,7 @@ function About() {
       <VisionMission />
       <Values />
       <Teams />
+      <TimeLine />
       <Footer />
     </>
   );

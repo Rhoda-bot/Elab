@@ -7,7 +7,7 @@ function Workspace() {
         <div className="row justify-content-center mx-auto">
           <div className="col-md-6 p-2 p-lg-4">
             <div className="workspace--img1 col-6 w-100 my-3 my-lg-5">
-              <div className="workspace--subtitle">
+              <div className="workspace--subtitle pt-5">
                 Conducive Workspace
               </div>
             </div>

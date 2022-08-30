@@ -3,24 +3,56 @@
         "id": 0,
         "title": "Cognesy",
         "image": "",
+        "year": 2022,
         "content": "We launched Cademy to provide access to quality education for children in underserved communities as well as those involved in homeschooling."
     },
     {
         "id": 1,
         "title": "Trifold",
         "image": "",
+        "year": 2021,
         "content": "We launched the MVP for Trifold"
     },
     {
         "id": 2,
         "title": "Gradeplus",
         "image": "",
+        "year": 2020,
         "content": "We launched Gradeplus Africa..."
     },
     {
         "id": 3,
         "title": "Cademy",
         "image": "",
+        "year" :2017,
+        "content": "We launched the MVP for Cademy"
+    },
+    {
+        "id": 4,
+        "title": "Cognesy",
+        "image": "",
+        "year": 2022,
+        "content": "We launched Cademy to provide access to quality education for children in underserved communities as well as those involved in homeschooling."
+    },
+    {
+        "id": 5,
+        "title": "Trifold",
+        "image": "",
+        "year": 2021,
+        "content": "We launched the MVP for Trifold"
+    },
+    {
+        "id": 6,
+        "title": "Gradeplus",
+        "image": "",
+        "year": 2020,
+        "content": "We launched Gradeplus Africa..."
+    },
+    {
+        "id": 7,
+        "title": "Cademy",
+        "image": "",
+        "year" :2017,
         "content": "We launched the MVP for Cademy"
     }
 ]

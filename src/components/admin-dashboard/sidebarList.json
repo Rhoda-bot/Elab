@@ -2,78 +2,92 @@
     {
         "id": 0,
         "title": "Impact",
-        "icon": "fa-solid fa-house fa-fw"
+        "icon": "fa-solid fa-house fa-fw",
+        "link": "/admin_dashboard/impact"
     },
     {
         "id": 1,
         "title": "Partners",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-people-line fa-fw",
+        "link": "/admin_dashboard/partners"
      
     },
     {
         "id": 2,
         "title": "Events",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-calender fa-fw",
+        "link": "/admin_dashboard/events"
      
     },
     {
         "id": 3,
-        "title": "Media Mentio",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "title": "Media Mention",
+        "icon": "fa-solid fa-photo-film fa-fw",
+        "link": "/admin_dashboard/media"
      
     },
     {
         "id": 4,
         "title": "Consultation",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-phone-volume fa-fw",
+        "link": "/admin_dashboard/consultation"
      
     },
     {
         "id": 5,
         "title": "Cowork",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-user fa-fw",
+        "link": "/admin_dashboard/cowork"
      
     },
     {
         "id": 6,
         "title": "Training",
-        "icon": "fa-solid fa-people-line fa-fw"
-     
+        "icon": "fa-solid fa-train fa-fw",
+        "link": "/admin_dashboard/training"
+        
     },
     {
         "id": 7,
         "title": "Blog",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-block-quote fa-fw",
+         "link": "/admin_dashboard/blog"
      
     },
     {
         "id": 8,
         "title": "Resources",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-book-blank fa-fw",
+         "link": "/admin_dashboard/resources"
      
     },
     {
         "id": 9,
         "title": "Projects",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-cubes-stacked fa-fw",
+         "link": "/admin_dashboard/projects"
      
     },
     {
         "id": 10,
         "title": "Non-profits",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-hand-holding-seedling fa-fw",
+         "link": "/admin_dashboard/non-profits"
      
     },
     {
         "id": 11,
         "title": "Startup Foundary",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-solid fa-hand-holding-seedling fa-fw",
+         "link": "/admin_dashboard/startup"
+        
      
     },
     {
         "id": 12,
         "title": "FAQ",
-        "icon": "fa-solid fa-people-line fa-fw"
+        "icon": "fa-light fa-rocket-launch fa-fw",
+         "link": "/admin_dashboard/faqs"
      
     }
     

@@ -29,6 +29,9 @@ import VideoPage from './components/home_resources/why/video';
 import Startup from './components/community/startups';
 import StartupDetails from './components/community/startups/startup-details';
 import Brochure from './components/community/startups/startup-brochure';
+import Dashboard from './components/admin-dashboard/dashboard';
+import Impact from './components/admin-dashboard/impart';
+import AdminDashboard from './components/admin-dashboard';
 
 function RootComponent() {
   return (
@@ -59,6 +62,13 @@ function RootComponent() {
         <Route path="/home_resources/contact-us" element={<ContactUs />} />
         <Route path="/home_resources/Why" element={<Whys />} />
         <Route path="/home_resources/Why/:id" element={<VideoPage />} />
+
+        {/* //{ DASHBOARD ROUTES} // */}
+        <Route path="/admin_dashboard" element={<AdminDashboard />}>
+          <Route path="impact" element={<Impact />} />
+        </Route>
+        {/* //{ DASHBOARD ROUTES} // */}
+
       </Routes>
     </Router>
   );

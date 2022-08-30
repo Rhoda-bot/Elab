@@ -15,16 +15,13 @@ function Teams() {
             the community.
           </p>
         </div>
-        <div className="row">
-            <div className="col-md-12">
-              <img src="/images/about/abouta.png" alt="" />
-            </div>
-            <div className="col-md-12">
-              <img src="/images/about/aboutb.png" alt="" />
-            </div>
-            <div className="col-md-12">
-              <img src="/images/about/aboutc.png" alt="" />
-            </div>
+        <div className="row justify-content-center">
+          <div className="col-md-10">
+            <img src="/images/about/abouta.png" alt="" className="img-fluid" />
+          </div>
+          <div className="col-md-10">
+            <img src="/images/about/aboutb.png" alt="" className="img-fluid" />
+          </div>
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ function Navbar() {
                   <Link className="navi--link text-dark link nav-link" to="/home_services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Services
                   </Link>
-                  <ul className="dropdown-menu border-0 navi__menu">
+                  <ul className="dropdown-menu border-0 navi__menu w-100">
                     <div className="container">
                       <div className="row g-2">
                         <div className="col-md-6">

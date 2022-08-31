@@ -1,31 +1,22 @@
 import React from 'react';
 
-function Impact() {
+function Partner() {
   return (
-    <div className="impact">
+    <div className="partner">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 text-lg-start text-center">
-            <span className="impact--title"> Impact</span>
-          </div>
-          <div className="col-md-6 text-lg-end text-center">
-            <button type="button" className="impact--btn">Add on Impact</button>
-          </div>
-        </div>
-        <div className="row">
-          <div className=" col-sm-12">
-            <div className="card impact__card border-0 p-5">
-              <table className="table table-borderless p-4 text-center justify-content-center">
+          <div className="col-md-12">
+            <div className="card border-0 card impact__card border-0 p-5">
+              <table className="table table-borderless p-4">
                 <thead>
                   <tr>
                     <th scope="col">S/N</th>
                     <th scope="col">Figure</th>
                     <th scope="col">Impact in words</th>
                     <th scope="col">Created On</th>
-                    <th scope="col">Delete</th>
                   </tr>
                 </thead>
-                <tbody className="align-items-center text-center">
+                <tbody>
                   <tr>
                     <th>1</th>
                     <td>Mark</td>
@@ -49,8 +40,8 @@ function Impact() {
                     <td>@twitter</td>
                     {/* <td>@twitter</td> */}
                     <td>
-                      <i className="fa-solid fa-pen-to-square" />
-                      <i className="fa-solid fa-trash" />
+                      <i className="fa-solid fa-pen-to-square m-2 link" />
+                      <i className="fa-solid fa-trash link" />
                     </td>
                   </tr>
                 </tbody>
@@ -62,4 +53,4 @@ function Impact() {
     </div>
   );
 }
-export default Impact;
+export default Partner;

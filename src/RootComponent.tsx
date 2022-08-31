@@ -32,6 +32,8 @@ import Brochure from './components/community/startups/startup-brochure';
 import Dashboard from './components/admin-dashboard/dashboard';
 import Impact from './components/admin-dashboard/impart';
 import AdminDashboard from './components/admin-dashboard';
+import Partner from './components/admin-dashboard/partners';
+import Blogs from './components/admin-dashboard/blog';
 
 function RootComponent() {
   return (
@@ -66,6 +68,8 @@ function RootComponent() {
         {/* //{ DASHBOARD ROUTES} // */}
         <Route path="/admin_dashboard" element={<AdminDashboard />}>
           <Route path="impact" element={<Impact />} />
+          <Route path="blog" element={<Blogs />} />
+          <Route path="consultations" element={<Consultation />} />
         </Route>
         {/* //{ DASHBOARD ROUTES} // */}
 

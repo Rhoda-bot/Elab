@@ -15,7 +15,7 @@
     {
         "id": 2,
         "title": "Events",
-        "icon": "fa-solid fa-calender fa-fw",
+        "icon": "fa-solid fa-clipboard-question fa-fw",
         "link": "/admin_dashboard/events"
      
     },
@@ -50,14 +50,14 @@
     {
         "id": 7,
         "title": "Blog",
-        "icon": "fa-solid fa-block-quote fa-fw",
+        "icon": "fa-solid fa-diagram-project fa-fw",
          "link": "/admin_dashboard/blog"
      
     },
     {
         "id": 8,
         "title": "Resources",
-        "icon": "fa-solid fa-book-blank fa-fw",
+        "icon": "fa-solid fa-file fa-fw",
          "link": "/admin_dashboard/resources"
      
     },
@@ -71,14 +71,14 @@
     {
         "id": 10,
         "title": "Non-profits",
-        "icon": "fa-solid fa-hand-holding-seedling fa-fw",
+        "icon": "fa-solid fa-sun-plant-wilt fa-fw",
          "link": "/admin_dashboard/non-profits"
      
     },
     {
         "id": 11,
         "title": "Startup Foundary",
-        "icon": "fa-solid fa-hand-holding-seedling fa-fw",
+        "icon": "fa-solid fa-newspaper fa-fw",
          "link": "/admin_dashboard/startup"
         
      
@@ -86,7 +86,7 @@
     {
         "id": 12,
         "title": "FAQ",
-        "icon": "fa-light fa-rocket-launch fa-fw",
+        "icon": "fa-solid fa-rocket fa-fw",
          "link": "/admin_dashboard/faqs"
      
     }

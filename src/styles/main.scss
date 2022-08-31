@@ -4,6 +4,73 @@ ul{
         list-style-type: none;
     }
 }
+.sidebar {
+    &::-webkit-scrollbar {
+        width: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgb(179, 177, 177); 
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #FFCC03; 
+      }
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 70%;
+    overflow: auto;
+      
+    
+    &--changeColor{
+        background-color: #FFCC03;
+        padding: 16px;
+        border-radius: 5px;
+        // color: #000000;
+    }
+  }
+  
+  .sidebar Link {
+    display: block;
+    color: black;
+    // padding: 7px;
+  }
+   
+  
+  
+  .sidebar Link:hover:not(.active) {
+    background-color: #FFCC03;
+    color: #060016;
+    padding: 16px;
+    border-radius: 5px;
+  }
+  
+  div.content {
+    margin-left: 270px;
+    padding: 1px 16px;
+    height: 100%;
+  }
+  
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
 .link{
     list-style-type: none;
     text-decoration-line: none;
@@ -1039,25 +1106,15 @@ ul{
 // ADMIN DASHBOARD  STARTS// 
 .dashboard{
     background-color: #F2F2F2;
-    &--changeColor{
-        background-color: #FFCC03;
-        margin: 20px;
-    }
-    &--title{
-        color: #828282;
-    }
 }
 .impact{
      &--title{
         font-size: 42px;
         font-weight: 700;
         color: #060016;
-        // padding-bottom: 30px
     }
     &--btn{
         @include Btn(5px, 191px, 52px, 600);
-        margin-left: 260px;
-        // margin-top: -30px;
     }
     &--btn:hover{
         @include BtnHover;
@@ -1083,6 +1140,22 @@ ul{
     }
 } 
 // FOOTER ENDS //
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar Link {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar Link {
+      text-align: center;
+      float: none;
+    }
+  }
 @media screen and (max-width:600px) {
     .hero{
     padding:  50px;
@@ -1099,14 +1172,17 @@ ul{
         width:120px;
     }
     }
-    .ourstory{
-        
-    }
+    
     .impact{
+        &--title{
+            font-size: 35px;
+        }
         &--btn{
-            margin-left: 0;
-            width: 150px;
-            background-color: #060016;
+            width: 145px;
+        }
+        &__card{
+            color: #0965D3;
+            overflow: hidden;
         }
     }
     .training{

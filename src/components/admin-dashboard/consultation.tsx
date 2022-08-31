@@ -10,7 +10,7 @@ interface obj {
   name: string
 
 }
-function Consultation() {
+function Consultations() {
   const [blogs, setBlogs] = useState<obj[]>();
   useEffect(() => {
     axios.get('https://elab-api.herokuapp.com/api/v1/consultations').then((res) => {
@@ -47,13 +47,13 @@ function Consultation() {
                     <tbody className="border-top m-3">
                       {
                     blogs?.map(({
-                      image, title, author, createdAt,
+                      name, email, phone, createdAt,
                     }, index) => (
                       <tr key={index}>
                         <td>{index + 1}</td>
-                        <td><img src={image} alt="" className="image-fluid" /></td>
-                        <td>{title}</td>
-                        <td>{author}</td>
+                        <td>{name}</td>
+                        <td>{email}</td>
+                        <td>{phone}</td>
                         <td>
                           {' '}
                           {moment(createdAt).format('LL')}
@@ -72,4 +72,4 @@ function Consultation() {
     </div>
   );
 }
-export default Blogs;
+export default Consultations;

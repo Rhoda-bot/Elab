@@ -34,6 +34,7 @@ import Impact from './components/admin-dashboard/impart';
 import AdminDashboard from './components/admin-dashboard';
 import Partner from './components/admin-dashboard/partners';
 import Blogs from './components/admin-dashboard/blog';
+import Consultations from './components/admin-dashboard/consultation';
 
 function RootComponent() {
   return (
@@ -69,7 +70,7 @@ function RootComponent() {
         <Route path="/admin_dashboard" element={<AdminDashboard />}>
           <Route path="impact" element={<Impact />} />
           <Route path="blog" element={<Blogs />} />
-          <Route path="consultations" element={<Consultation />} />
+          <Route path="consultation" element={<Consultations />} />
         </Route>
         {/* //{ DASHBOARD ROUTES} // */}
 

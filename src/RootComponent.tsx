@@ -35,6 +35,17 @@ import AdminDashboard from './components/admin-dashboard';
 import Partner from './components/admin-dashboard/partners';
 import Blogs from './components/admin-dashboard/blog';
 import Consultations from './components/admin-dashboard/consultation';
+import AdEvents from './components/admin-dashboard/events';
+import AdMediaMentions from './components/admin-dashboard/media-mentions';
+import AdNonProfit from './components/admin-dashboard/non-profits';
+import AdPayments from './components/admin-dashboard/payment';
+import AdProject from './components/admin-dashboard/projects';
+import AdResources from './components/admin-dashboard/resources';
+import AdServices from './components/admin-dashboard/services';
+import AdStartupFoundary from './components/admin-dashboard/startup-foundary';
+import AdTraining from './components/admin-dashboard/training';
+import AdVolunteers from './components/admin-dashboard/volunteers';
+import AdWorkPlans from './components/admin-dashboard/work-plan';
 
 function RootComponent() {
   return (
@@ -71,6 +82,18 @@ function RootComponent() {
           <Route path="impact" element={<Impact />} />
           <Route path="blog" element={<Blogs />} />
           <Route path="consultation" element={<Consultations />} />
+          <Route path="consultation" element={<Consultations />} />
+          <Route path="events" element={<AdEvents />} />
+          <Route path="mentions" element={<AdMediaMentions />} />
+          <Route path="non-profit" element={<AdNonProfit />} />
+          <Route path="payments" element={<AdPayments />} />
+          <Route path="projects" element={<AdProject />} />
+          <Route path="resources" element={<AdResources />} />
+          <Route path="services" element={<AdServices />} />
+          <Route path="startup" element={<AdStartupFoundary />} />
+          <Route path="training" element={<AdTraining />} />
+          <Route path="volunteers" element={<AdVolunteers />} />
+          <Route path="workspaces" element={<AdWorkPlans />} />
         </Route>
         {/* //{ DASHBOARD ROUTES} // */}
 

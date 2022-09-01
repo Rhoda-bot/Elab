@@ -4,16 +4,16 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
 interface obj {
-  email: string,
-  phone: string,
-  createdAt: string,
-  name: string
-
+ name: string,
+ email: string,
+ project: string,
+ skills: string,
+updatedAt: string
 }
-function Consultations() {
+function AdVolunteers() {
   const [blogs, setBlogs] = useState<obj[]>();
   useEffect(() => {
-    axios.get('https://elab-api.herokuapp.com/api/v1/consultations').then((res) => {
+    axios.get('https://elab-api.herokuapp.com/api/v1/volunteers/').then((res) => {
       if (res.data.status.toString() === 'success') {
         setBlogs([...res.data.data, res.data.data]);
       }
@@ -24,6 +24,14 @@ function Consultations() {
     <div>
       <div className="blog">
         <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-lg-start text-center">
+              <span className="impact--title m-3">Volunteers</span>
+            </div>
+            <div className="col-md-6 text-lg-end text-center">
+              <button type="button" className="impact--btn">Add a Volunteer</button>
+            </div>
+          </div>
           <div className="row">
             <div className="col-md-12 m-3">
               <div className="card border-0 impact__card p-3">
@@ -39,24 +47,27 @@ function Consultations() {
                       <tr>
                         <th scope="col">S/N</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Email Address</th>
-                        <th scope="col">Phone Number</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Skills</th>
                         <th scope="col">Created On</th>
                       </tr>
                     </thead>
                     <tbody className="border-top m-3">
                       {
                     blogs?.map(({
-                      name, email, phone, createdAt,
+                      name, email, project, skills, updatedAt,
                     }, index) => (
                       <tr key={index}>
                         <td>{index + 1}</td>
-                        <td>{name}</td>
-                        <td>{email}</td>
-                        <td>{phone}</td>
                         <td>
-                          {' '}
-                          { createdAt ? moment(createdAt).format('LL') : false}
+                          {name}
+                        </td>
+                        <td>{email}</td>
+                        <td>{project}</td>
+                        <td>{skills}</td>
+                        <td>
+                          {updatedAt ? moment(updatedAt).format('LL') : false}
                         </td>
                       </tr>
                     ))
@@ -72,4 +83,4 @@ function Consultations() {
     </div>
   );
 }
-export default Consultations;
+export default AdVolunteers;

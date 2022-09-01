@@ -29,6 +29,14 @@ function Blogs() {
       <div className="blog">
         <div className="container">
           <div className="row">
+            <div className="col-md-6 text-lg-start text-center">
+              <span className="impact--title m-3"> Blog</span>
+            </div>
+            <div className="col-md-6 text-lg-end text-center">
+              <button type="button" className="impact--btn">Add a Blog post</button>
+            </div>
+          </div>
+          <div className="row">
             <div className="col-md-12 m-3">
               <div className="card border-0 impact__card p-3">
                 <div className="col-md-6 m-3">
@@ -55,12 +63,12 @@ function Blogs() {
                     }, index) => (
                       <tr key={index}>
                         <td>{index + 1}</td>
-                        <td><img src={image} alt="" className="image-fluid" /></td>
+                        <td><img src={image} alt="" className="impact__card--img" /></td>
                         <td>{title}</td>
                         <td>{author}</td>
                         <td>
                           {' '}
-                          {moment(createdAt).format('LL')}
+                          {createdAt ? moment(createdAt).format('LL') : false}
                         </td>
                       </tr>
                     ))

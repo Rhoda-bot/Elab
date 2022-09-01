@@ -7,9 +7,9 @@
     },
     {
         "id": 1,
-        "title": "Partners",
-        "icon": "fa-solid fa-people-line fa-fw",
-        "link": "/admin_dashboard/partners"
+        "title": "Volunteers",
+        "icon": "fa-solid fa-users fa-fw",
+        "link": "/admin_dashboard/volunteers"
      
     },
     {
@@ -23,7 +23,7 @@
         "id": 3,
         "title": "Media Mention",
         "icon": "fa-solid fa-photo-film fa-fw",
-        "link": "/admin_dashboard/media"
+        "link": "/admin_dashboard/mentions"
      
     },
     {
@@ -35,9 +35,9 @@
     },
     {
         "id": 5,
-        "title": "Cowork",
+        "title": "Services",
         "icon": "fa-solid fa-user fa-fw",
-        "link": "/admin_dashboard/cowork"
+        "link": "/admin_dashboard/services"
      
     },
     {
@@ -72,7 +72,14 @@
         "id": 10,
         "title": "Non-profits",
         "icon": "fa-solid fa-sun-plant-wilt fa-fw",
-         "link": "/admin_dashboard/non-profits"
+         "link": "/admin_dashboard/non-profit"
+     
+    },
+    {
+        "id": 10,
+        "title": "Payments",
+        "icon": "fa-solid fa-ranking-star fa-fw",
+         "link": "/admin_dashboard/payments"
      
     },
     {
@@ -85,9 +92,9 @@
     },
     {
         "id": 12,
-        "title": "FAQ",
+        "title": "Workspace Bookings",
         "icon": "fa-solid fa-rocket fa-fw",
-         "link": "/admin_dashboard/faqs"
+         "link": "/admin_dashboard/workspaces"
      
     }
     

@@ -4,16 +4,14 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
 interface obj {
-  email: string,
-  phone: string,
-  createdAt: string,
-  name: string
-
+ title: string,
+ image: string,
+updatedAt: string
 }
-function Consultations() {
+function AdNonProfit() {
   const [blogs, setBlogs] = useState<obj[]>();
   useEffect(() => {
-    axios.get('https://elab-api.herokuapp.com/api/v1/consultations').then((res) => {
+    axios.get('https://elab-api.herokuapp.com/api/v1/non-profits').then((res) => {
       if (res.data.status.toString() === 'success') {
         setBlogs([...res.data.data, res.data.data]);
       }
@@ -24,6 +22,14 @@ function Consultations() {
     <div>
       <div className="blog">
         <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-lg-start text-center">
+              <span className="impact--title m-3"> Non-Profit</span>
+            </div>
+            <div className="col-md-6 text-lg-end text-center">
+              <button type="button" className="impact--btn">Add a Non-profit</button>
+            </div>
+          </div>
           <div className="row">
             <div className="col-md-12 m-3">
               <div className="card border-0 impact__card p-3">
@@ -38,25 +44,22 @@ function Consultations() {
                     <thead>
                       <tr>
                         <th scope="col">S/N</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email Address</th>
-                        <th scope="col">Phone Number</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Non-profit title</th>
                         <th scope="col">Created On</th>
                       </tr>
                     </thead>
                     <tbody className="border-top m-3">
                       {
                     blogs?.map(({
-                      name, email, phone, createdAt,
+                      image, title, updatedAt,
                     }, index) => (
                       <tr key={index}>
                         <td>{index + 1}</td>
-                        <td>{name}</td>
-                        <td>{email}</td>
-                        <td>{phone}</td>
+                        <td><img src={image} alt="" className="impact__card--img" /></td>
+                        <td>{title}</td>
                         <td>
-                          {' '}
-                          { createdAt ? moment(createdAt).format('LL') : false}
+                          { updatedAt ? moment(updatedAt).format('LL') : false}
                         </td>
                       </tr>
                     ))
@@ -72,4 +75,4 @@ function Consultations() {
     </div>
   );
 }
-export default Consultations;
+export default AdNonProfit;

@@ -4,18 +4,18 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
 interface obj {
-  email: string,
-  phone: string,
-  createdAt: string,
-  name: string
-
+ name: string,
+ yearFounded: string,
+ image: string,
+updatedAt: string
 }
-function Consultations() {
+function AdStartupFoundary() {
   const [blogs, setBlogs] = useState<obj[]>();
   useEffect(() => {
-    axios.get('https://elab-api.herokuapp.com/api/v1/consultations').then((res) => {
+    axios.get('https://elab-api.herokuapp.com/api/v1/startups/').then((res) => {
       if (res.data.status.toString() === 'success') {
         setBlogs([...res.data.data, res.data.data]);
+        console.log(res.data.data);
       }
     }).catch((err) => err);
   }, []);
@@ -24,6 +24,14 @@ function Consultations() {
     <div>
       <div className="blog">
         <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-lg-start text-center">
+              <span className="impact--title m-3">Startup Foundry</span>
+            </div>
+            <div className="col-md-6 text-lg-end text-center">
+              <button type="button" className="impact--btn">Add a Startup</button>
+            </div>
+          </div>
           <div className="row">
             <div className="col-md-12 m-3">
               <div className="card border-0 impact__card p-3">
@@ -38,25 +46,24 @@ function Consultations() {
                     <thead>
                       <tr>
                         <th scope="col">S/N</th>
+                        <th scope="col">Logo</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Email Address</th>
-                        <th scope="col">Phone Number</th>
+                        <th scope="col">Year founded</th>
                         <th scope="col">Created On</th>
                       </tr>
                     </thead>
                     <tbody className="border-top m-3">
                       {
                     blogs?.map(({
-                      name, email, phone, createdAt,
+                      name, image, yearFounded, updatedAt,
                     }, index) => (
                       <tr key={index}>
-                        <td>{index + 1}</td>
+                        <td>{ index + 1}</td>
+                        <td><img src={image} className="impact__card--img" alt="" /></td>
                         <td>{name}</td>
-                        <td>{email}</td>
-                        <td>{phone}</td>
+                        <td>{yearFounded}</td>
                         <td>
-                          {' '}
-                          { createdAt ? moment(createdAt).format('LL') : false}
+                          { updatedAt ? moment(updatedAt).format('LL') : false}
                         </td>
                       </tr>
                     ))
@@ -72,4 +79,4 @@ function Consultations() {
     </div>
   );
 }
-export default Consultations;
+export default AdStartupFoundary;

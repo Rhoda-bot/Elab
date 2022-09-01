@@ -1106,6 +1106,8 @@ ul{
 // ADMIN DASHBOARD  STARTS// 
 .dashboard{
     background-color: #F2F2F2;
+    height: 100%;
+    overflow: hidden;
 }
 .impact{
      &--title{
@@ -1121,6 +1123,10 @@ ul{
     }
     &__card{
         box-shadow: 0px 5px 15px rgba(122, 122, 122, 0.15);
+        &--img{
+            width: 40px;
+            height: 40px;
+        }
     }
 }
 // ADMIN DASHBOARD  ENDS// 

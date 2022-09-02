@@ -21,7 +21,6 @@ function Events() {
                     Header text for program title and
                     it can be this long
                   </p>
-                  <p className="text-center events__card--text">Appropriate CTA</p>
                 </div>
               </div>
             </div>
@@ -34,7 +33,6 @@ function Events() {
                     Header text for program title and
                     it can be this long
                   </p>
-                  <p className="text-center events__card--text">Appropriate CTA</p>
                 </div>
               </div>
             </div>
@@ -47,7 +45,6 @@ function Events() {
                     Header text for program title and
                     it can be this long
                   </p>
-                  <p className="text-center events__card--text">Appropriate CTA</p>
                 </div>
               </div>
             </div>

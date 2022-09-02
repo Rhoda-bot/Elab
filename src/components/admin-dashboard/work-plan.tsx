@@ -19,7 +19,6 @@ function AdWorkPlans() {
     axios.get('https://elab-api.herokuapp.com/api/v1/workspaces/').then((res) => {
       if (res.data.status.toString() === 'success') {
         setBlogs([...res.data.data, res.data.data]);
-        console.log(res.data.data);
       }
     }).catch((err) => err);
   }, []);

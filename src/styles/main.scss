@@ -81,12 +81,11 @@ ul{
 }
 // NAVBAR STARTS //
 .dropdown-menu{
-    width: 350px;
+    width: 450px;
 }
 .dropdown-item{
     font-size: 18px;
      font-weight: 600 !important;
-    //  font-style: bold;
      color: #333333;
      font-weight: bolder;
 }
@@ -94,6 +93,14 @@ ul{
     display: block;
     margin-top: 0; // remove the gap so it doesn't close
  }
+ .nav-item{
+    border-bottom: 3px solid #ffffff;
+ } 
+ .nav-item:hover{
+    // margin-top: 10px;
+    border-bottom: 3px solid #FFCC03;
+    z-index: 1;
+}
 .navi{
     background-color: rgba(51, 51, 51, 0.1), #ffffff;
     &__logo{
@@ -103,23 +110,40 @@ ul{
         color: #000000;  
     }
     &--btn{
-        // background-color: #BE9800;
-        background-color: #FFCC03;
-        border: none;
-        color: #ffffff;
-        width: 110px;
-        border-radius: 5px;
+       background-color: #FFCC03;
+       width: 100px;
+       box-sizing: 0 4px 10px rgb(51 51 51 / 10%);
+       color: #251e00;
+       border-radius: 5px;
+       border: none;
+       font-weight: 600;
+    }
+    &--btn:hover{
+        @include BtnHover;
     }
     &__menu{
-        background-color: blue;
-        &--item{
+        &--item{ 
             padding: 5px;
-            width: 100%;
             font-size: normal;
         }
+        &--link{
+            text-decoration-line: none;
+            color: #060016;
+        }
+        &--link:hover{
+            color: #060016;
+        }
+        &--name{
+            font-weight: 600;
+            font-size: 15px;
+            color: #060016;
+        }
+        &--text{
+            font-size: 12px;
+        }
         &--item:hover{
-            border-left: 3px solid #FFCC03;
-            box-shadow: 0px 5px 20px rgba(51, 51, 51, 0.1);
+            border-left: 5px solid #FFCC03;
+            box-shadow: 0px 5px 10px rgba(51, 51, 51, 0.1);
             border-radius: 5px;
         }
     }
@@ -145,11 +169,11 @@ ul{
 .hero{
         color: #ffffff;
         padding:  100px;
-        height: 100vh;
+        height: 100%;
         background-size: cover;
         &--title{
         font-weight: 700;
-        font-size: 60px;
+        font-size: 54px;
         line-height: 4rem;
         margin-bottom: 10px;
     }
@@ -288,7 +312,7 @@ ul{
             height: 56px; 
         }
         &--btn{
-            @include Btn(10px, 176px, 56px, 600);
+            @include Btn(10px, 192px, 56px, 600);
         }
         &--btn:hover{
             @include BtnHover;
@@ -309,12 +333,14 @@ ul{
         color: #4F4F4F;
     }
     &__card{
-        box-shadow: 0px 8px 16px rgba(110, 110, 110, 0.164);
+        box-shadow: 0 15px 50px 0 rgb(77 77 77 / 15%);
         &--btn{
             @include Btn(5px, 112px, 35px, 400);
             background-color: #FFFCF2;
+            border: none;
             top: 4446px;
             left: 1251px;
+            box-shadow: none;
         }
         &--subtitle{
             margin-top: 20px;
@@ -332,8 +358,8 @@ ul{
         }
     }
     &__card:hover{
-        box-shadow: 2px 25px 25px rgba(0, 24, 8, 0.15);
-        transition: all ease 300ms; 
+        box-shadow: 0 4px 8px rgb(0 24 8 / 15%);
+        transition: ease-in-out .3s; 
     }
 }
 // EVENTS ENDS //
@@ -370,7 +396,7 @@ ul{
 
 // CARDS  STARTS //
 .cards{
-    box-shadow: 0px 3px 5px rgba(0, 24, 8, 0.15);
+    box-shadow: 0 2px 12px rgb(51 51 51 / 10%);
     &__description{
         &--title{
             font-weight: 700;
@@ -390,10 +416,6 @@ ul{
             @include BtnHover;
         }
     }
-}
-.cards:hover{
-    box-shadow: 0px 15px 17px rgba(0, 24, 8, 0.15); 
-    transition: 300ms all ease;
 }
 // CARDS  ENDS //
 
@@ -501,6 +523,13 @@ ul{
         font-size: 30px;
         font-weight: 700;
         color: #060016;
+    }
+    &--btn{
+        @include Btn(10px, 192px, 64px, 600);  
+        margin-left: 42px;
+    }
+    &--btn:hover{
+        @include BtnHover;
     }
     &--img{
         height: 100%;
@@ -806,16 +835,24 @@ ul{
 
 // PROFITCARDS //
 .profitcard{
+    box-sizing: 0 2px 12px rgb(51 51 51 / 20%);
+    transition: .3s ease-in-out;
+    cursor: pointer;
     &--subtitle{
         font-size: 28px;
         color: #060016;
         font-weight: 700;
+        border-radius: 5px;
     }
     &--text{
         margin-left: 20px;
         font-size: 18px;
         font-weight: 400;
     }
+}
+.profitcard:hover{
+    box-sizing: 0 2px 12px rgb(51 51 51 / 20%);
+    transition: .3s ease-in-out;
 }
 // PROFITCARDS //
 
@@ -1131,6 +1168,17 @@ ul{
 }
 // ADMIN DASHBOARD  ENDS// 
 
+// NOTFOUND STARTS //
+.notfound{
+    &__content{
+        &--btn{
+            @include Btn(10px, 192px, 64px, 600);
+
+        }
+    }
+}
+// NOTFOUND ENDS //
+
 // FOOTER STARTS //
 .footer{
     padding: 30px;
@@ -1165,7 +1213,7 @@ ul{
 @media screen and (max-width:600px) {
     .hero{
     padding:  50px;
-    height: 100%;
+    height: 50vh;
     &--title{
         font-size: 1.97rem;
         line-height: normal;

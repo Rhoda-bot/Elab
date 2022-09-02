@@ -1,32 +1,22 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import ROUTES from '../resources/routes-constants';
 
 function NotFoundPage() {
-  const navigate = useNavigate();
-
-  /**
-     * Call this function to redirect the user to the homepage.
-     */
-  const redirectToHomePage = () => {
-    navigate(ROUTES.HOMEPAGE_ROUTE);
-  };
-
   return (
-    <>
-      <div style={{
-        position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',
-      }}
-      >
-        <h1 style={{ fontSize: '4em' }}>Oops 404!</h1>
-
+    <div className="notfound">
+      <div className="container">
+        <div className="row py-5 text-center justify-content-center align-items-center text-center">
+          <div className="col-md-12">
+            <div className="notfound__content">
+              <img src="/images/reusable/error.png" alt="" className="img-fluid" />
+              <p className="notfound__content--text">
+                You did not break the internet, but we cannot find what you are looking for.
+              </p>
+              <button className="notfound__content--btn " type="button">Go back Home</button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <Link to="/" className="link text-center"> click here to redirect to home page</Link>
-
-    </>
+    </div>
   );
 }
 

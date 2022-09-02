@@ -16,9 +16,12 @@ function NavigationBar() {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <b>
                   {' '}
-                  <i className="fa-solid fa-circle-notch mt-1 m-3" />
+                  <b><i className="fa-solid fa-right-from-bracket mt-1 m-1" style={{ color: '#FFCC03' }} /></b>
                 </b>
-                <span>Log out</span>
+                <b>
+                  {' '}
+                  <span>Log out</span>
+                </b>
               </ul>
             </form>
           </div>

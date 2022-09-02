@@ -23,7 +23,7 @@ function Hero({
       }}
     >
       <div className="container">
-        <div className="row mx-auto justify-content-center text-center pt-5 align-items-center mt-4 ">
+        <div className="row mx-auto justify-content-center text-center pt-4 align-items-center ">
           <div className="col-md-8 hero--title mt-5">
             {
               circleText && <CircleBg text={circleText} />

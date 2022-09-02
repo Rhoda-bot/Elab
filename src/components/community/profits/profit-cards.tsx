@@ -5,8 +5,8 @@ function ProfitCard() {
     <div className="profitcard py-3">
       <div className="container">
         <div className="row py-3">
-          <div className="col-md-6 col-lg-4 p-2">
-            <div className="card p-2 shadow-sm border-0">
+          <div className="col-md-6 col-lg-4 p-2 px-2 px-lg-4 my-3 my-lg-4 ">
+            <div className="card p-4 px-lg-5 py-lg-5 pb-lg-4 pb-2 border-0 bg-light">
               <div className="profitcard--subtitle">
                 Non-profit title
                 {' '}
@@ -20,8 +20,8 @@ function ProfitCard() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-lg-4 p-2">
-            <div className="card p-2 shadow-sm border-0">
+          <div className="col-md-6 col-lg-4 p-2 px-2 px-lg-4 my-3 my-lg-4">
+            <div className="card p-4 px-lg-5 py-lg-5 pb-lg-4 pb-2 bg-light border-0">
               <div className="profitcard--subtitle">
                 Non-profit title
                 {' '}
@@ -35,8 +35,8 @@ function ProfitCard() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-lg-4 p-2">
-            <div className="card p-2 shadow-sm border-0">
+          <div className="col-md-6 col-lg-4 p-2 px-2 px-lg-4 my-3 my-lg-4">
+            <div className="card p-4 px-lg-5 py-lg-5 pb-lg-4 pb-2 bg-light border-0">
               <div className="profitcard--subtitle">
                 Non-profit title
                 {' '}

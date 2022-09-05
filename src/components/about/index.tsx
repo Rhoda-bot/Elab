@@ -4,6 +4,7 @@ import React from 'react';
 import Footer from '../reuseables/footer';
 import Hero from '../reuseables/hero';
 import Navbar from '../reuseables/navbar';
+import Testimonials from '../reuseables/testimonial';
 import VisionMission from '../reuseables/visionmission';
 import TimeLine from './graph';
 import Teams from './teams';
@@ -13,10 +14,11 @@ function About() {
   return (
     <>
       <Navbar />
-      <Hero title="Appropriate Content is needed for this section " bgImage="/images/about/hero1.png" gradient="rgba(6, 0, 22, 0.55)" />
+      <Hero title="Innovation and enterprise thinking is richly engrained in who we are and in our history." bgImage="/images/about/hero1.png" gradient="rgba(6, 0, 22, 0.55)" />
       <VisionMission />
       <Values />
       <Teams />
+      {/* <Testimonials /> */}
       <TimeLine />
       <Footer />
     </>

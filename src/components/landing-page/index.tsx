@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import React from 'react';
-import TimeLine from '../about/graph';
 import Events from '../reuseables/events';
 import Footer from '../reuseables/footer';
 import Hero from '../reuseables/hero';
@@ -35,7 +34,6 @@ function Home() {
       <Media />
       <Trainings />
       <Footer />
-      <TimeLine />
     </>
   );
 }

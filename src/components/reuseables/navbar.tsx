@@ -14,10 +14,10 @@ function Navbar() {
 
             <form className="d-flex flex-end ms-auto p-2" role="search">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-lg-center">
-                <li className="nav-item py-0 mx-3 mx-lg-2 mx-xl-3">
+                <li className="nav-item py-0">
                   <Link to="/about" className="navi--link text-dark nav-link active p-2" aria-current="page">About us</Link>
                 </li>
-                <li className="nav-item dropdown navi__dropdown py-0 mx-3 mx-lg-2 mx-xl-3">
+                <li className="nav-item dropdown navi__dropdown py-0 mx-2">
                   <Link className="navi--link text-dark link nav-link" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {/* py-1 my-1 my-lg-0 */}
                     Programs
@@ -25,16 +25,16 @@ function Navbar() {
                   <ul className="dropdown-menu border-0 shadow-sm mt-1">
                     <div className="container p-4">
                       <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-6 mb-2">
                           <li className="navi__menu--item">
-                            <Link className="navi__menu--link px-3 p-2 my-3 w-100" to="/programs">
+                            <Link className="navi__menu--link" to="/programs">
                               <span className="navi__menu--name">Community</span>
                               <br />
                               <span className="navi__menu--text">A  short description stays here</span>
                             </Link>
                           </li>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mb-2">
                           <li className="navi__menu--item">
                             <Link className="navi__menu--link" to="/programs/project">
                               <span className="navi__menu--name">Projects</span>
@@ -77,13 +77,13 @@ function Navbar() {
                     </div>
                   </ul>
                 </li>
-                <li className="nav-item dropdown navi__dropdown py-0 mx-3 mx-lg-2 mx-xl-3">
+                <li className="nav-item dropdown navi__dropdown py-0 mx-2">
                   <Link className="navi--link text-dark link nav-link" to="/home_services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Services
                   </Link>
                   <ul className="dropdown-menu border-0 navi__menu mt-1">
                     <div className="container p-4">
-                      <div className="row g-2">
+                      <div className="row">
                         <div className="col-md-6">
                           <li className="navi__menu--item">
                             <Link className="navi__menu--link" to="/home_services/consultation">
@@ -116,7 +116,7 @@ function Navbar() {
                     </div>
                   </ul>
                 </li>
-                <li className="nav-item dropdown navi__dropdown py-0 mx-3 mx-lg-2 mx-xl-3">
+                <li className="nav-item dropdown navi__dropdown py-0 mx-2">
                   <Link className="navi--link text-dark link nav-link p-2" to="/home_services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Resources
                   </Link>
@@ -141,7 +141,7 @@ function Navbar() {
                             </Link>
                           </li>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 ">
                           <li className="navi__menu--item">
                             <Link className="navi__menu--link" to="/home_resources/consultation">
                               <span className="navi__menu--name"> Ebook</span>
@@ -163,11 +163,11 @@ function Navbar() {
                     </div>
                   </ul>
                 </li>
-                <li className="nav-item py-0 mx-3 mx-lg-2 mx-xl-3">
+                <li className="nav-item py-0 mx-2 mx-lg-2 mx-xl-2">
                   <Link to="/home_resources/contact-us" className="navi--link text-dark link nav-link p-2">Contact Us</Link>
                 </li>
-                <button className="navi--btn" type="submit">
-                  <li className=""><Link className="dropdown-item " to="/home_resources/Why">login</Link></li>
+                <button className="navi--btn mx-3 pe-3 pe-lg-0 me-lg-0 my-2 my-lg-0 p-0" type="submit">
+                  <li className=""><Link className="dropdown-item" to="/home_resources/Why">login</Link></li>
                 </button>
               </ul>
             </form>

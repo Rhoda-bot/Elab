@@ -67,7 +67,7 @@ function RootComponent() {
         <Route path="/home_services" element={<Services />} />
         <Route path="/home_services/consultation" element={<Consultation />} />
         <Route path="/home_services/consultation/bookings" element={<Booking />} />
-        <Route path="/home_services/training" element={<HomeServices />} />
+        <Route path="programs" element={<HomeServices />} />
         <Route path="/home_services/training-details" element={<HomeTrainings />} />
         <Route path="/home_resources/blog" element={<HomeResource />} />
         <Route path="/home_resources/blog-details" element={<Blog />} />

@@ -1,9 +1,8 @@
 @import './mixins';
-ul{
     li{
         list-style-type: none;
     }
-}
+
 .sidebar {
     &::-webkit-scrollbar {
         width: 8px;
@@ -99,7 +98,7 @@ ul{
  .nav-item:hover{
     // margin-top: 10px;
     border-bottom: 3px solid #FFCC03;
-    z-index: 1;
+    // width: 100px;
 }
 .navi{
     background-color: rgba(51, 51, 51, 0.1), #ffffff;
@@ -111,12 +110,14 @@ ul{
     }
     &--btn{
        background-color: #FFCC03;
-       width: 100px;
-       box-sizing: 0 4px 10px rgb(51 51 51 / 10%);
+       width: 90px;
+       box-shadow: 0 4px 10px rgb(51 51 51 / 10%);
        color: #251e00;
        border-radius: 5px;
        border: none;
        font-weight: 600;
+       z-index: 1;
+       transition: .3s ease-in-out;
     }
     &--btn:hover{
         @include BtnHover;
@@ -421,18 +422,22 @@ ul{
 
 // VISIONMISSION STARTS //
 .visionmission{
-    padding: 50px;
     background-color: rgba(255, 204, 3, 0.05);
-    &__description{
-        padding: 40px;
-        // background-color: red;
-        &--subtitle{
+    &__card{
+        background-color: transparent;
+        border: 0;
+        &--title{
             font-weight: 700;
             font-size: 1.5rem;
             color: #000000;
+            margin-bottom: 0.5em;
+        }
+        &--text{
+            font-size: 20px;
+            color: #4F4F4F;
         }
         &--img{
-            width: 6vw;
+            width: 6rem;
         }
     }
 }
@@ -440,28 +445,30 @@ ul{
 
 // VALUES STARTS //
 .values{
-    padding: 50px;
     background-color: #060016;
-    &--title{
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: #FFCC03;
-    }
-    &--text{
-        color: #ffffff;
-        font-size: 1.2rem;
-    }
-    &__description{
-        padding: 40px;
-        &--subtitle{
-            color: #ffffff;
+    &__top{
+        &--title{
             font-weight: 700;
+            font-size: 2.5rem;
+            color: #FFCC03;
         }
         &--text{
             color: #ffffff;
+            font-size: 1.5rem;
+        }
+    }
+    &__card{
+        &--subtitle{
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        &--text{
+            color: #ffffff;
+            font-size: 1.1rem;
         }
         &--img{
-            width: 6vw;
+            width: 4rem;
         }
     }
 }
@@ -1181,15 +1188,35 @@ ul{
 
 // FOOTER STARTS //
 .footer{
-    padding: 30px;
-    &__description{
-        &--title{
-            font-weight: 700;
-            font-size: 1.2rem;
-            padding-bottom: 20px;
-        }
-        &--text{
-            font-size: .9rem;
+    background-color: #060016;
+    &--line{
+        color: #e0e0e0;
+        opacity: .75;
+    }
+    &--socials{
+        border: 2px solid #5f5e5e;
+        color: transparent;
+        border-radius: 100%;
+        transition: .3s ease-in-out;
+    }
+    &--socials:hover{
+        background-color: #FFCC03;
+        border: 2px solid #FFCC03;
+    }
+    &__top{
+       &--title{
+        color: #fff;
+        font-size: 1.4rem;
+       }
+       &--text{
+        color: #e0e0e0;
+        opacity: .75;
+        font-size: 1.2rem;
+       }
+    }
+    &__bottom{
+        &--icon{
+            width: 10rem;
         }
     }
 } 

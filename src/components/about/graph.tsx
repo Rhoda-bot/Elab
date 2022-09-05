@@ -19,7 +19,10 @@ function TimeLine() {
   //   return arr;
   // }, []);
 
-  const handleDisplay = (index: number, year:number) => ({ index, year });
+  const handleDisplay = (year:number) => {
+    const filtered = timelineList.filter((val) => (val.year === year));
+    console.log(filtered);
+  };
   return (
 
     <div className="timeline">
@@ -28,7 +31,9 @@ function TimeLine() {
           <div className="col-md-10">
             {
               timelineList.map(({ id, year }) => (
-                <button type="button" key={id} onClick={(event: React.MouseEvent<HTMLElement>) => handleDisplay(id, year)}>{year}</button>
+                <div key={id} className="p-2 d-flex d-column d-row">
+                  <button type="button" onClick={(event: React.MouseEvent<HTMLElement>) => handleDisplay(year)}>{year}</button>
+                </div>
               ))
             }
           </div>

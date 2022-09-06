@@ -3,37 +3,47 @@ import React from 'react';
 function Benefits() {
   return (
     <>
-      <div className="benefits">
-        <div className="container">
-          <div className="row text-center align-items-center justify-content-center mx-auto">
-            <div className="benefits--title">Benefits of Joining the Community</div>
-            <p className="benefits--text">
+      <div className="benefit py-5">
+        <div className="container py-lg-5">
+          <div className="benefit__header text-center mx-auto">
+            <h4 className="benefit__header--title py-3">Benefits of Joining the Community</h4>
+            <p className="benefit__header--text">
               As a Trybe member, your benefits are:
             </p>
-            <div className="col-md-12 ">
-              <div className="row justify-content-center mx-auto">
-                <div className="col-md-3">
-                  <img src="/images/about/mission.png" alt="" className="img-fluid benefits--img" />
-                  <p className="benefits--subtitle">
-                    Free online masterclasses
-                  </p>
+          </div>
+          <div className="benefit__bottom  mx-auto justify-content-center">
+            <div className="row text-center my-2 my-lg-4">
+              <div className="col-md-6 col-lg-4 h-100 my-lg-3">
+                <div className="benefit__card border-0 h-100">
+                  <img src="/images/favicon/benefit1.png" alt="" className="img-fluid  my-2 my-lg-3 benefit__card--img" />
+                  <div className="card-body px-3 px-md-5">
+                    <h6 className=" card-title benefit__card--subtitle">
+                      Free online masterclasses
+                    </h6>
+                  </div>
                 </div>
-                <div className="col-md-3">
-                  <img src="/images/about/vision.png" alt="" className="img-fluid benefits--img" />
-                  <p className="benefits--subtitle">Career sensitization summits</p>
+              </div>
+              <div className="col-md-6 col-lg-4 h-100 my-lg-3">
+                <div className="benefit__card border-0 h-100">
+                  <img src="/images/favicon/benefit2.png" alt="" className="img-fluid  my-2 my-lg-3 benefit__card--img" />
+                  <div className="card-body px-3 px-md-5">
+                    <h6 className="benefit__card--subtitle card-title">Career sensitization summits</h6>
+                  </div>
                 </div>
-                <div className="col-md-3">
-                  <img src="/images/about/mission.png" alt="" className="img-fluid benefits--img" />
-                  <p className="benefits--subtitle">
-                    Free online masterclasses
-                  </p>
+              </div>
+              <div className="col-md-6 col-lg-4 h-100 my-lg-3">
+                <div className="benefit__card border-0 h-100">
+                  <img src="/images/favicon/benefit2.png" alt="" className="img-fluid  my-2 my-lg-3 benefit__card--img" />
+                  <div className="card-body px-3 px-md-5">
+                    <h6 className="benefit__card--subtitle card-title">Free Online Class</h6>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row justify-content-center pt-4">
-            <button className="benefits--btn col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Join Tyrbe</button>
-          </div>
+        </div>
+        <div className="benefit__cta py-4 text-center">
+          <button className="benefit__cta--btn fw-bold py-3 px-5" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Join Tyrbe</button>
         </div>
       </div>
       {/* // MODAL */}

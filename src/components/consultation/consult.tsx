@@ -4,21 +4,23 @@ function Consults() {
   return (
     <>
       <div className="consult py-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 consult__description pt-5">
-              <div className="consult__description--title">
+        <div className="container py-lg-5">
+          <div className="row align-items-center">
+            <div className="col-md-6 my-2 order-2 order-md-1">
+              <h4 className="consult--title py-2">
                 Header text about consultation stays her
-              </div>
-              <p className="consult__description--text">
+              </h4>
+              <p className="consult--text py-md-2">
                 We integrate consulting and advisory services with solution-rich
                 insights and strategically aligned,
                 contextually responsive practices customized for your business needs.
               </p>
-              <button type="button" className="consult__description--btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Book a Session</button>
+              <div className="py-md-2 pb-3 pb-md-0">
+                <button type="button" className="consult--btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Book a Session</button>
+              </div>
             </div>
-            <div className="col-md-6 ">
-              <img src="/images/services/services5.png" alt="" className="img-fluid p-5" />
+            <div className="col-md-6 px-md-5 my-2 order-1 order-md-2">
+              <img src="/images/services/services5.png" alt="" className="img-fluid " />
             </div>
           </div>
         </div>

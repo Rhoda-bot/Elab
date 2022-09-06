@@ -5,7 +5,7 @@ function Values() {
     <div className="values py-5">
       <div className="container py-lg-5">
         <div className="row values__top text-center align-items-center mx-auto justify-content-center">
-          <h4 className="values__top--title py-3">Our Guiding Values</h4>
+          <h5 className="values__top--title py-3">Our Guiding Values</h5>
           <p className="values__top--text">
             Ennovate Lab is an ark built on the foundation of
             redemptive entreprenuership to preserve posterity
@@ -29,7 +29,7 @@ function Values() {
           <div className="col-md-6 col-lg-4 my-2 my-lg-3">
             <div className="values__card h-100">
               <img src="/images/about/cama.png" alt="" className="img-fluid values__card--img my-2 mx-auto" />
-              <div className="values__card--subtitle fw-bold">Creativity</div>
+              <h5 className="values__card--subtitle fw-bold">Creativity</h5>
               <p className="values__card--text">
                 Creativity is a unique part of our culture
                 which drives everything we do.
@@ -39,7 +39,7 @@ function Values() {
           <div className="col-md-6 col-lg-4 my-2 my-lg-3">
             <div className="values__card h-100">
               <img src="/images/about/teamwork.png" alt="" className="img-fluid values__card--img" />
-              <div className="values__card--subtitle fw-bold">Teamwork</div>
+              <h5 className="values__card--subtitle fw-bold">Teamwork</h5>
               <p className="values__card--text">
                 At Ennovate Lab, every one person is as important
                 as the other person
@@ -70,7 +70,7 @@ function Values() {
           <div className="col-md-6 col-lg-4 my-2 my-lg-3">
             <div className="values__card h-100">
               <img src="/images/about/cama.png" alt="" className="img-fluid values__card--img" />
-              <div className="values__card--subtitle">Comaraderie</div>
+              <h5 className="values__card--subtitle">Comaraderie</h5>
               <p className="values__card--text">
                 We hold dearly the prevading atmosphere of
                 familyhood and friendship both in the workplace

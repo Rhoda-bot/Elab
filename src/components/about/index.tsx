@@ -4,9 +4,9 @@ import React from 'react';
 import Footer from '../reuseables/footer';
 import Hero from '../reuseables/hero';
 import Navbar from '../reuseables/navbar';
-import Testimonials from '../reuseables/testimonial';
+// import Testimonials from '../reuseables/testimonial';
 import VisionMission from '../reuseables/visionmission';
-import TimeLine from './graph';
+// import TimeLine from './graph';
 import Teams from './teams';
 import Values from './values';
 
@@ -19,7 +19,7 @@ function About() {
       <Values />
       <Teams />
       {/* <Testimonials /> */}
-      <TimeLine />
+      {/* <TimeLine /> */}
       <Footer />
     </>
   );

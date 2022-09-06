@@ -67,19 +67,19 @@ function Footer() {
                 <ul className="p-0 w-100 ml-0 text-lg-end">
                   <Link className="" target="_blank" rel="noreferer" to="https://web.facebook.com/Ennovatelab">
                     <span className="fa-stack fa-1x custom ms-3">
-                      {/* <i className="fas fa-circle fa-stack-2x" aria-hidden="true" /> */}
+                      <i className="fas fa-circle fa-stack-2x" aria-hidden="true" />
                       <i className="fab fa-facebook-f fa-stack-1x fa-inverse footer--socials" aria-hidden="true" />
                     </span>
                   </Link>
                   <Link className="" target="_blank" rel="noreferer" to="https://www.instagram.com/official_ennovatelab/">
                     <span className="fa-stack fa-1x custom ms-3" role="button">
-                      {/* <i className="fas fa-circle fa-stack-2x" aria-hidden="true" /> */}
+                      <i className="fas fa-circle fa-stack-2x" aria-hidden="true" />
                       <i className="fab fa-instagram fa-stack-1x fa-inverse footer--socials" aria-hidden="true" />
                     </span>
                   </Link>
                   <Link className="" target="_blank" rel="noreferer" to="https://www.linkedin.com/in/ennovatelabteam/">
                     <span className="fa-stack fa-1x custom ms-3" role="button">
-                      {/* <i className="fas fa-circle fa-stack-2x" aria-hidden="true" /> */}
+                      <i className="fas fa-circle fa-stack-2x" aria-hidden="true" />
                       <i className="fab fa-linkedin-in fa-stack-1x fa-inverse footer--socials" aria-hidden="true" />
                     </span>
                   </Link>

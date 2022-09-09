@@ -1088,6 +1088,15 @@
 
 // BLOGDETAILS STARTS //
 
+.content{
+    &__card{
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(122, 122, 122, 0.15);;
+
+    }
+}
+
 // BOOKING STARTS //
 .booking{
     &--title{

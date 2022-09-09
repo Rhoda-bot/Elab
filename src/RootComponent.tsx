@@ -29,10 +29,8 @@ import VideoPage from './components/home_resources/why/video';
 import Startup from './components/community/startups';
 import StartupDetails from './components/community/startups/startup-details';
 import Brochure from './components/community/startups/startup-brochure';
-import Dashboard from './components/admin-dashboard/dashboard';
 import Impact from './components/admin-dashboard/impart';
 import AdminDashboard from './components/admin-dashboard';
-import Partner from './components/admin-dashboard/partners';
 import Blogs from './components/admin-dashboard/blog';
 import Consultations from './components/admin-dashboard/consultation';
 import AdEvents from './components/admin-dashboard/events';
@@ -46,6 +44,7 @@ import AdStartupFoundary from './components/admin-dashboard/startup-foundary';
 import AdTraining from './components/admin-dashboard/training';
 import AdVolunteers from './components/admin-dashboard/volunteers';
 import AdWorkPlans from './components/admin-dashboard/work-plan';
+import AddBlog from './components/admin-dashboard/add-blog';
 
 function RootComponent() {
   return (
@@ -80,7 +79,9 @@ function RootComponent() {
         {/* //{ DASHBOARD ROUTES} // */}
         <Route path="/admin_dashboard" element={<AdminDashboard />}>
           <Route path="impact" element={<Impact />} />
-          <Route path="blog" element={<Blogs />} />
+          <Route path="blog" element={<Blogs />}>
+            <Route path="add-blog" element={<AddBlog />} />
+          </Route>
           <Route path="consultation" element={<Consultations />} />
           <Route path="consultation" element={<Consultations />} />
           <Route path="events" element={<AdEvents />} />

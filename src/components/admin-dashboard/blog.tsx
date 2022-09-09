@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable react/no-array-index-key */
 import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 interface obj {
   id: string,
@@ -23,17 +25,24 @@ function Blogs() {
       }
     }).catch((err) => err);
   }, []);
+  const navigate = useNavigate();
+
+  const handleAddBlog = () => {
+    navigate('/admin_dashboard/blog/add-blog');
+  };
 
   return (
-    <div>
-      <div className="blog">
+    <>
+      <div className={((window.location.pathname === '/admin_dashboard/blog/add-blog')) ? 'd-none' : 'blog'}>
         <div className="container">
           <div className="row">
             <div className="col-md-6 text-lg-start text-center">
               <span className="impact--title m-3"> Blog</span>
             </div>
             <div className="col-md-6 text-lg-end text-center">
-              <button type="button" className="impact--btn">Add a Blog post</button>
+              <button type="button" className="impact--btn" onClick={handleAddBlog}>
+                Add a Blog post
+              </button>
             </div>
           </div>
           <div className="row">
@@ -43,6 +52,7 @@ function Blogs() {
                   <div className="form-group has-search">
                     <span className="fa fa-search form-control-feedback" />
                     <input type="text" className="form-control" placeholder="Search" />
+
                   </div>
                 </div>
                 <div className="row">
@@ -58,21 +68,21 @@ function Blogs() {
                     </thead>
                     <tbody className="border-top m-3">
                       {
-                    blogs?.map(({
-                      image, title, author, createdAt,
-                    }, index) => (
-                      <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td><img src={image} alt="" className="impact__card--img" /></td>
-                        <td>{title}</td>
-                        <td>{author}</td>
-                        <td>
-                          {' '}
-                          {createdAt ? moment(createdAt).format('LL') : false}
-                        </td>
-                      </tr>
-                    ))
-                  }
+                   blogs?.map(({
+                     image, title, author, createdAt,
+                   }, index) => (
+                     <tr key={index}>
+                       <td>{index + 1}</td>
+                       <td><img src={image} alt="" className="impact__card--img" /></td>
+                       <td>{title}</td>
+                       <td>{author}</td>
+                       <td>
+                         {' '}
+                         {createdAt ? moment(createdAt).format('LL') : false}
+                       </td>
+                     </tr>
+                   ))
+                 }
                     </tbody>
                   </table>
                 </div>
@@ -81,7 +91,8 @@ function Blogs() {
           </div>
         </div>
       </div>
-    </div>
+      <Outlet />
+    </>
   );
 }
 export default Blogs;

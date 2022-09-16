@@ -88,7 +88,7 @@ function Navbar() {
                           <li className="navi__menu--item mb-2">
                             <Link className="navi__menu--link p-2 px-2 w-100" to="/home_services">
                               <span className="navi__menu--name">Digital Services</span>
-                              <br />
+
                               <span className="navi__menu--text">A  short description stays here</span>
                             </Link>
 
@@ -155,10 +155,10 @@ function Navbar() {
                   </ul>
                 </li>
                 <li className="nav-item py-0 mx-2 mx-lg-2 mx-xl-2">
-                  <Link to="/home_resources/contact-us" className="navi--link text-dark link nav-link p-2">Contact Us</Link>
+                  <Link to="/home_resources/Why" className="navi--link text-dark link nav-link p-2">Find your Y</Link>
                 </li>
                 <button className="navi--btn mx-3 pe-3 pe-lg-0 me-lg-0 my-2 my-lg-0 p-0" type="submit">
-                  <li className=""><Link className="dropdown-item" to="/home_resources/Why">login</Link></li>
+                  <li className=""><Link className="dropdown-item" to="/auth/sign-in">login</Link></li>
                 </button>
               </ul>
             </form>

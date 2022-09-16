@@ -12,7 +12,7 @@ import SIDEBARLIST__SCHEMA from './sidebarList.json';
 function Sidebar() {
   const sidelist: obj[] = SIDEBARLIST__SCHEMA;
   return (
-    <div className="sidebar">
+    <div className="sidebar h-100">
       {
               sidelist?.sort().map(({
                 id, title, icon, link,

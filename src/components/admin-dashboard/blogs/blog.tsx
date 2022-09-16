@@ -30,10 +30,13 @@ function Blogs() {
   const handleAddBlog = () => {
     navigate('/admin_dashboard/blog/add-blog');
   };
+  const handleEditBlog = () => {
+    navigate('/admin_dashboard/blog/edit-blog');
+  };
 
   return (
     <>
-      <div className={((window.location.pathname === '/admin_dashboard/blog/add-blog')) ? 'd-none' : 'blog'}>
+      <div className={(window.location.pathname === '/admin_dashboard/blog/add-blog') || (window.location.pathname === '/admin_dashboard/blog/edit-blog') ? 'd-none' : 'blog'}>
         <div className="container">
           <div className="row">
             <div className="col-md-6 text-lg-start text-center">
@@ -79,6 +82,9 @@ function Blogs() {
                        <td>
                          {' '}
                          {createdAt ? moment(createdAt).format('LL') : false}
+                       </td>
+                       <td>
+                         <i className="fa-solid fa-pen-to-square" onClick={handleEditBlog} aria-hidden="true" />
                        </td>
                      </tr>
                    ))

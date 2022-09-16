@@ -9,7 +9,6 @@ interface obj {
     content: string
 }
 function TimeLine() {
-  const [active, setActive] = useState(true);
   const timelineList: obj[] = TIMELINE__SCHEMA;
   // timelineList.reduce((arr, objs) => {
   //   if (!arr.some((o: any) => o.year === objs.year)) {

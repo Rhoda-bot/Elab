@@ -31,7 +31,7 @@ import StartupDetails from './components/community/startups/startup-details';
 import Brochure from './components/community/startups/startup-brochure';
 import Impact from './components/admin-dashboard/impart';
 import AdminDashboard from './components/admin-dashboard';
-import Blogs from './components/admin-dashboard/blog';
+import Blogs from './components/admin-dashboard/blogs/blog';
 import Consultations from './components/admin-dashboard/consultation';
 import AdEvents from './components/admin-dashboard/events';
 import AdMediaMentions from './components/admin-dashboard/media-mentions';
@@ -44,7 +44,10 @@ import AdStartupFoundary from './components/admin-dashboard/startup-foundary';
 import AdTraining from './components/admin-dashboard/training';
 import AdVolunteers from './components/admin-dashboard/volunteers';
 import AdWorkPlans from './components/admin-dashboard/work-plan';
-import AddBlog from './components/admin-dashboard/add-blog';
+import AddBlog from './components/admin-dashboard/blogs/add-blog';
+import EditBlog from './components/admin-dashboard/blogs/edit-blog';
+import SignIn from './components/auth/sign-in';
+import SignUp from './components/auth/sign-up';
 
 function RootComponent() {
   return (
@@ -75,12 +78,15 @@ function RootComponent() {
         <Route path="/home_resources/contact-us" element={<ContactUs />} />
         <Route path="/home_resources/Why" element={<Whys />} />
         <Route path="/home_resources/Why/:id" element={<VideoPage />} />
+        <Route path="/auth/sign-in" element={<SignIn />} />
+        <Route path="/auth/sign-up" element={<SignUp />} />
 
         {/* //{ DASHBOARD ROUTES} // */}
         <Route path="/admin_dashboard" element={<AdminDashboard />}>
           <Route path="impact" element={<Impact />} />
           <Route path="blog" element={<Blogs />}>
             <Route path="add-blog" element={<AddBlog />} />
+            <Route path="edit-blog" element={<EditBlog />} />
           </Route>
           <Route path="consultation" element={<Consultations />} />
           <Route path="consultation" element={<Consultations />} />

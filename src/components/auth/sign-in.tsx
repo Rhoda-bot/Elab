@@ -20,7 +20,7 @@ function SignIn() {
     const { email, password } = inputVal;
     axios.post('auth/login', { email, password }).then((res) => {
       if (res.data.status === 'success') {
-        JSON.parse(localStorage.setItem('token', res.data.token));
+        localStorage.setItem('token', res.data.token);
         navigate('/admin_dashboard');
       }
     });

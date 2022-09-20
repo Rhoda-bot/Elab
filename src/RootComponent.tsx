@@ -33,9 +33,8 @@ import Impact from './components/admin-dashboard/impart';
 import AdminDashboard from './components/admin-dashboard';
 import Blogs from './components/admin-dashboard/blogs/blog';
 import Consultations from './components/admin-dashboard/consultation';
-import AdEvents from './components/admin-dashboard/events';
-import AdMediaMentions from './components/admin-dashboard/media-mentions';
-import AdNonProfit from './components/admin-dashboard/non-profits';
+import AdMediaMentions from './components/admin-dashboard/media-mention/media-mentions';
+import AdNonProfit from './components/admin-dashboard/non-profit/non-profits';
 import AdPayments from './components/admin-dashboard/payment';
 import AdProject from './components/admin-dashboard/projects';
 import AdResources from './components/admin-dashboard/resources';
@@ -48,6 +47,10 @@ import AddBlog from './components/admin-dashboard/blogs/add-blog';
 import EditBlog from './components/admin-dashboard/blogs/edit-blog';
 import SignIn from './components/auth/sign-in';
 import SignUp from './components/auth/sign-up';
+import AddEvent from './components/admin-dashboard/events/add-event';
+import AdminEvents from './components/admin-dashboard/events/events';
+import AddMentions from './components/admin-dashboard/media-mention/add-mentions';
+import AddNonProfit from './components/admin-dashboard/non-profit/add-nonprofit';
 
 function RootComponent() {
   return (
@@ -90,9 +93,15 @@ function RootComponent() {
           </Route>
           <Route path="consultation" element={<Consultations />} />
           <Route path="consultation" element={<Consultations />} />
-          <Route path="events" element={<AdEvents />} />
-          <Route path="mentions" element={<AdMediaMentions />} />
-          <Route path="non-profit" element={<AdNonProfit />} />
+          <Route path="events" element={<AdminEvents />}>
+            <Route path="add-events" element={<AddEvent />} />
+          </Route>
+          <Route path="media" element={<AdMediaMentions />}>
+            <Route path="add-media" element={<AddMentions />} />
+          </Route>
+          <Route path="non-profit" element={<AdNonProfit />}>
+            <Route path="add-non-profit" element={<AddNonProfit />} />
+          </Route>
           <Route path="payments" element={<AdPayments />} />
           <Route path="projects" element={<AdProject />} />
           <Route path="resources" element={<AdResources />} />

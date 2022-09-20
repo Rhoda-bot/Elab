@@ -1,11 +1,5 @@
 [
     {
-        "id": 0,
-        "title": "Impact",
-        "icon": "fa-solid fa-house fa-fw",
-        "link": "/admin_dashboard/impact"
-    },
-    {
         "id": 1,
         "title": "Volunteers",
         "icon": "fa-solid fa-users fa-fw",
@@ -23,7 +17,7 @@
         "id": 3,
         "title": "Media Mention",
         "icon": "fa-solid fa-photo-film fa-fw",
-        "link": "/admin_dashboard/mentions"
+        "link": "/admin_dashboard/media"
      
     },
     {

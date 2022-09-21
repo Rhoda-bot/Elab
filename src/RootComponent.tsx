@@ -36,13 +36,14 @@ import Consultations from './components/admin-dashboard/consultation';
 import AdMediaMentions from './components/admin-dashboard/media-mention/media-mentions';
 import AdNonProfit from './components/admin-dashboard/non-profit/non-profits';
 import AdPayments from './components/admin-dashboard/payment';
-import AdProject from './components/admin-dashboard/projects';
-import AdResources from './components/admin-dashboard/resources';
-import AdServices from './components/admin-dashboard/services';
-import AdStartupFoundary from './components/admin-dashboard/startup-foundary';
-import AdTraining from './components/admin-dashboard/training';
-import AdVolunteers from './components/admin-dashboard/volunteers';
-import AdWorkPlans from './components/admin-dashboard/work-plan';
+import AdProject from './components/admin-dashboard/projects/projects';
+import AdResources from './components/admin-dashboard/resources/resources';
+import AddResources from './components/admin-dashboard/resources/add-resources';
+import AdServices from './components/admin-dashboard/services/services';
+import AdStartupFoundary from './components/admin-dashboard/startup-foundary/startup-foundary';
+import AdTraining from './components/admin-dashboard/trainings/training';
+import AdVolunteers from './components/admin-dashboard/volunteer/volunteers';
+import AdWorkPlans from './components/admin-dashboard/workspace/work-plan';
 import AddBlog from './components/admin-dashboard/blogs/add-blog';
 import EditBlog from './components/admin-dashboard/blogs/edit-blog';
 import SignIn from './components/auth/sign-in';
@@ -51,6 +52,11 @@ import AddEvent from './components/admin-dashboard/events/add-event';
 import AdminEvents from './components/admin-dashboard/events/events';
 import AddMentions from './components/admin-dashboard/media-mention/add-mentions';
 import AddNonProfit from './components/admin-dashboard/non-profit/add-nonprofit';
+import AddProject from './components/admin-dashboard/projects/add-project';
+import AddServices from './components/admin-dashboard/services/add-services';
+import AddStartupFoundary from './components/admin-dashboard/startup-foundary/add-startupfoundary';
+import AddTraining from './components/admin-dashboard/trainings/add-training';
+import AddWorkspacePlan from './components/admin-dashboard/workspace/add-workspaceplan';
 
 function RootComponent() {
   return (
@@ -103,13 +109,25 @@ function RootComponent() {
             <Route path="add-non-profit" element={<AddNonProfit />} />
           </Route>
           <Route path="payments" element={<AdPayments />} />
-          <Route path="projects" element={<AdProject />} />
-          <Route path="resources" element={<AdResources />} />
-          <Route path="services" element={<AdServices />} />
-          <Route path="startup" element={<AdStartupFoundary />} />
-          <Route path="training" element={<AdTraining />} />
+          <Route path="projects" element={<AdProject />}>
+            <Route path="add-projects" element={<AddProject />} />
+          </Route>
+          <Route path="resources" element={<AdResources />}>
+            <Route path="add-resources" element={<AddResources />} />
+          </Route>
+          <Route path="services" element={<AdServices />}>
+            <Route path="add-services" element={<AddServices />} />
+          </Route>
+          <Route path="startup" element={<AdStartupFoundary />}>
+            <Route path="add-startup" element={<AddStartupFoundary />} />
+          </Route>
+          <Route path="training" element={<AdTraining />}>
+            <Route path="add-training" element={<AddTraining />} />
+          </Route>
           <Route path="volunteers" element={<AdVolunteers />} />
-          <Route path="workspaces" element={<AdWorkPlans />} />
+          <Route path="workspaces" element={<AdWorkPlans />}>
+            <Route path="add-workspaces" element={<AddWorkspacePlan />} />
+          </Route>
         </Route>
         {/* //{ DASHBOARD ROUTES} // */}
 

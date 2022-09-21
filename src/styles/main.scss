@@ -60,8 +60,10 @@
     margin: 0;
     padding: 0;
     position: fixed;
-    height: 80%;
     overflow: auto;
+    background-color: #F2F2F2;
+    height: 70%;
+
       
     
     &--changeColor{
@@ -1262,10 +1264,7 @@
 .dashboard{
     background-color: #F2F2F2;
     height: 100%;
-    // overflow: hidden;
-}
-.sidebar{
-    height: 100%;
+    overflow: hidden;
 }
 .addblog{
     height: 100vh;
@@ -1346,7 +1345,7 @@
 // FOOTER ENDS //
 @media screen and (max-width: 700px) {
     .sidebar {
-      width: 80%;
+      width: 100%;
       height: auto;
       position: relative;
     }

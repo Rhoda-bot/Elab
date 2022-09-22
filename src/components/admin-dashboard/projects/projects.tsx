@@ -32,7 +32,7 @@ function AdProject() {
 
   return (
     <>
-      <div className={(window.location.pathname === '/admin_dashboard/projects/add-projects') || (window.location.pathname === '/admin_dashboard/projects/edit-projects') ? 'd-none' : 'blog'}>
+      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'blog'}>
         <div className="blog">
           <div className="container">
             <div className="row">

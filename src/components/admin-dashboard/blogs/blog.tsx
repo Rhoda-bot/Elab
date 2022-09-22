@@ -4,6 +4,7 @@ import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
+import DeleteItem from './delete-blog';
 
 interface obj {
   id: string,
@@ -36,7 +37,7 @@ function Blogs() {
 
   return (
     <>
-      <div className={(window.location.pathname === '/admin_dashboard/blog/add-blog') || (window.location.pathname === '/admin_dashboard/blog/edit-blog') ? 'd-none' : 'blog'}>
+      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'blog'}>
         <div className="container">
           <div className="row">
             <div className="col-md-6 text-lg-start text-center">
@@ -86,6 +87,10 @@ function Blogs() {
                        <td>
                          <i className="fa-solid fa-pen-to-square" onClick={handleEditBlog} aria-hidden="true" />
                        </td>
+                       <td>
+                         <i className="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
+                       </td>
+
                      </tr>
                    ))
                  }

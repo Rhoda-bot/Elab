@@ -4,18 +4,18 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useNavigate } from 'react-router';
+import { useLocation } from 'react-router';
 
-function AddNonProfit() {
+function EditResources() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
-  const [pdfFile, setPdfFile] = useState('');
-  const [pdfError, setPdfError] = useState('');
-  const navigate = useNavigate();
+  const location = useLocation();
+  const [brochure, setBrochure] = useState('');
+  const [selectedOption, setSelectedOption] = useState<string>();
 
   const inputValues = {
     title: '',
-    link: '',
+    price: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
 
@@ -28,31 +28,20 @@ function AddNonProfit() {
     }
     const selectedPdfFile = e?.target.files;
     if (selectedPdfFile) {
-      setPdfFile(selectedPdfFile[0].name);
+      setBrochure(selectedPdfFile[0].name);
     }
-
-    // const fileType = ['application/pdf'];
-    // const selectedPdfFile = e?.target.files;
-    // if (selectedPdfFile) {
-    //   if (selectedPdfFile && fileType.includes(selectedPdfFile[0].type)) {
-    //     const reader = new FileReader();
-    //     reader.readAsDataURL(selectedPdfFile[0]);
-    //     reader.onloadend = (a: any) => {
-    //       setPdfFile(a.currentTarget.result);
-    //       setPdfError('');
-    //     };
-    //   } else {
-    //     setPdfFile(null);
-    //     setPdfError('Please set valid pdf file');
-    //   }
-    // } else {
-    //   console.log('select your file');
-    // }
   };
+  const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const val = event.target.value;
+    setSelectedOption(val);
+  };
+
   const handleSubmit = () => {
-    const { title, link } = inputVal;
-    axios.post('non-profits', {
-      title, description: values, pdfFile, image, link,
+    const {
+      title, price,
+    } = inputVal;
+    axios.post('projects', {
+      title, description: values, brochure, image, price, selectedOption,
     }).then((res) => {
       if (res) {
         console.log(res.data);
@@ -60,7 +49,9 @@ function AddNonProfit() {
     }).catch((err) => err);
   };
 
-  const { link, title } = inputVal;
+  const {
+    title, price,
+  } = inputVal;
 
   return (
     <div className="addblog h-100">
@@ -68,7 +59,7 @@ function AddNonProfit() {
         <div className="row">
           <div className="row">
             <div className="col-md-6 text-lg-start text-center">
-              <span className="impact--title m-3"> Add a Blog Post</span>
+              <span className="impact--title m-3"> Add a Project</span>
             </div>
             <div className="col-md-6 text-lg-end text-center pt-2">
               <span>
@@ -81,7 +72,7 @@ function AddNonProfit() {
             <div className="content__card w-100 p-5">
               <form className="content__form mx-5">
                 <div className="py-2">
-                  <label htmlFor="name" className="p-0 fw-bold">Non-profit title</label>
+                  <label htmlFor="name" className="p-0 fw-bold">Title</label>
                   <br />
                   <input
                     type="text"
@@ -94,7 +85,7 @@ function AddNonProfit() {
                   />
                 </div>
                 <div className="py-2">
-                  <label htmlFor="name" className="p-0 fw-bold">Non-profit description</label>
+                  <label htmlFor="name" className="p-0 fw-bold">Description</label>
                   <br />
                   <ReactQuill theme="snow" value={values} onChange={setValues} className="my-2" />
                 </div>
@@ -104,17 +95,28 @@ function AddNonProfit() {
                   <input type="file" className="name p-3 my-2 content__form--input form-control" id="image" onChange={handleOnChange} required />
                 </div>
                 <div className="py-2">
-                  <label htmlFor="name" className="p-0 fw-bold">Non-profit Image</label>
+                  <label htmlFor="name" className="p-0 fw-bold">Image</label>
                   <br />
-                  <input type="file" className="name p-3 my-2 content__form--input form-control" id="image" onChange={handleOnChange} required />
+                  <input type="file" className=" p-3 my-2 content__form--input form-control" id="image" onChange={handleOnChange} required />
                 </div>
-                <div className="py-2">
-                  <label htmlFor="name" className="p-0 fw-bold">Non-profit website link</label>
-                  <br />
-                  <input type="text" className="name p-3 my-2 content__form--input form-control" id="name" name="" onChange={handleOnChange} value={link} required />
+                <div className="row ">
+                  <div className="col">
+                    <span>Category</span>
+                    <select className="form-select p-3 my-2 shadow-none" aria-label="Default select example" onChange={selectChange}>
+                      <option selected>Open this select menu</option>
+                      <option value="Whitepaper">Whitepaper</option>
+                      <option value="Digital">Digital</option>
+                      <option value="Industry insights">Industry insights</option>
+                      <option value="Open source-data">Open source-data</option>
+                    </select>
+                  </div>
+                  <div className="col">
+                    <span>Resources</span>
+                    <input type="price" name="endDate" value={price} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
+                  </div>
                 </div>
                 <div className="py-3 py-lg-4 px-0 mx-0">
-                  <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>publish</button>
+                  <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>Save Resources</button>
                 </div>
               </form>
             </div>
@@ -124,4 +126,4 @@ function AddNonProfit() {
     </div>
   );
 }
-export default AddNonProfit;
+export default EditResources;

@@ -30,7 +30,7 @@ function AdResources() {
 
   return (
     <>
-      <div className={(window.location.pathname === '/admin_dashboard/resources/add-resource') || (window.location.pathname === '/admin_dashboard/resources/edit-resource') ? 'd-none' : 'blog'}>
+      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'blog'}>
         <div className="blog">
           <div className="container">
             <div className="row">

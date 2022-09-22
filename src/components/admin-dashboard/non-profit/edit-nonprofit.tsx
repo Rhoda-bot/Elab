@@ -6,7 +6,7 @@ import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useNavigate } from 'react-router';
 
-function AddNonProfit() {
+function EditNonProfit() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
   const [pdfFile, setPdfFile] = useState('');
@@ -124,4 +124,4 @@ function AddNonProfit() {
     </div>
   );
 }
-export default AddNonProfit;
+export default EditNonProfit;

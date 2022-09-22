@@ -31,7 +31,7 @@ function AdStartupFoundary() {
 
   return (
     <>
-      <div className={(window.location.pathname === '/admin_dashboard/startup/add-startup') || (window.location.pathname === '/admin_dashboard/startup/edit-startup') ? 'd-none' : 'blog'}>
+      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'blog'}>
         <div className="blog">
           <div className="container">
             <div className="row">

@@ -3,8 +3,11 @@ import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import DeleteItem from '../blogs/delete-blog';
 
 interface obj {
+id: string,
  title: string,
  image: string,
  link: string,
@@ -24,13 +27,10 @@ function AdMediaMentions() {
   const handleAddMedia = () => {
     navigate('/admin_dashboard/media/add-media');
   };
-  const handleEditMedia = () => {
-    navigate('/admin_dashboard/blog/edit-media');
-  };
 
   return (
     <>
-      <div className={(window.location.pathname === '/admin_dashboard/media/add-media') || (window.location.pathname === '/admin_dashboard/media/edit-media') ? 'd-none' : 'blog'}>
+      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'blog'}>
         <div className="blog">
           <div className="container">
             <div className="row">
@@ -64,17 +64,29 @@ function AdMediaMentions() {
                       <tbody className="border-top m-3">
                         {
                     blogs?.map(({
-                      image, title, link, updatedAt,
+                      image, title, link, updatedAt, id,
                     }, index) => (
-                      <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td><img src={image} alt="" className="impact__card--img" /></td>
-                        <td>{title}</td>
-                        <td>{link}</td>
-                        <td>
-                          {updatedAt ? moment(updatedAt).format('LL') : false}
-                        </td>
-                      </tr>
+                      <>
+                        <tr key={index}>
+                          <td>{index + 1}</td>
+                          <td><img src={image} alt="" className="impact__card--img" /></td>
+                          <td>{title}</td>
+                          <td>{link}</td>
+                          <td>
+                            {updatedAt ? moment(updatedAt).format('LL') : false}
+                          </td>
+                          <td>
+
+                            <Link to={`/admin_dashboard/media/edit-media/${id}`}>
+                              <i className="fa-solid fa-pen-to-square" aria-hidden="true" />
+                            </Link>
+                          </td>
+                          <td>
+                            <i className="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
+                          </td>
+                        </tr>
+                        <DeleteItem urlPath="mentions" id={id} />
+                      </>
                     ))
                   }
                       </tbody>

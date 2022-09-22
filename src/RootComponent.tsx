@@ -57,6 +57,7 @@ import AddServices from './components/admin-dashboard/services/add-services';
 import AddStartupFoundary from './components/admin-dashboard/startup-foundary/add-startupfoundary';
 import AddTraining from './components/admin-dashboard/trainings/add-training';
 import AddWorkspacePlan from './components/admin-dashboard/workspace/add-workspaceplan';
+import EditMentions from './components/admin-dashboard/media-mention/edit-mentions';
 
 function RootComponent() {
   return (
@@ -104,6 +105,7 @@ function RootComponent() {
           </Route>
           <Route path="media" element={<AdMediaMentions />}>
             <Route path="add-media" element={<AddMentions />} />
+            <Route path="edit-media/:id" element={<EditMentions />} />
           </Route>
           <Route path="non-profit" element={<AdNonProfit />}>
             <Route path="add-non-profit" element={<AddNonProfit />} />

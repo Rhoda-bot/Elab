@@ -90,7 +90,7 @@ function AddStartupFoundary() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Year founded</label>
                   <br />
-                  <input type="text" className="name p-3 my-2 content__form--input form-control" id="name" name="link" onChange={handleOnChange} value={link} required />
+                  <input type="text" className="name p-3 my-2 content__form--input form-control" id="name" name="year" onChange={handleOnChange} value={year} required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Website link</label>

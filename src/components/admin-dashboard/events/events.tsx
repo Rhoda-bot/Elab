@@ -27,12 +27,12 @@ function AdminEvents() {
     navigate('/admin_dashboard/events/add-events');
   };
   const handleEditEvent = () => {
-    navigate('/admin_dashboard/blog/edit-blog');
+    navigate('/admin_dashboard/events/edit-events');
   };
 
   return (
     <>
-      <div className={(window.location.pathname === '/admin_dashboard/events/add-events') || (window.location.pathname === '/admin_dashboard/events/edit-events') ? 'd-none' : 'events'}>
+      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'events'}>
         <div className="events">
           <div className="container">
             <div className="row align-items-center">

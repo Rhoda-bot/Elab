@@ -31,7 +31,7 @@ function AdTraining() {
   };
   return (
     <>
-      <div className={(window.location.pathname === '/admin_dashboard/training/add-training') || (window.location.pathname === '/admin_dashboard/training/edit-training') ? 'd-none' : 'blog'}>
+      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'blog'}>
         <div className="blog">
           <div className="container">
             <div className="row">

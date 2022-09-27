@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { useParams } from 'react-router';
 
 function EditServices() {
   const [image, setImage] = useState('');
   const [values, setValues] = useState('');
-
+  const { id } = useParams();
   const inputValues = {
     title: '',
     link: '',
+    description: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
 
@@ -28,7 +30,7 @@ function EditServices() {
     const {
       title, link,
     } = inputVal;
-    axios.post('mentions', {
+    axios.patch('services', {
       title, description: values, link, image,
     }).then((res) => {
       if (res) {
@@ -37,8 +39,16 @@ function EditServices() {
     }).catch((err) => err);
   };
 
+  useEffect(() => {
+    axios.get(`services/${id}`).then((res) => {
+      if (res.data.status.toString() === 'success') {
+        setInputVals(res.data.data);
+      }
+    }).catch((err) => err);
+  }, [id]);
+
   const {
-    title, link,
+    title, link, description,
   } = inputVal;
 
   return (
@@ -47,7 +57,7 @@ function EditServices() {
         <div className="row">
           <div className="row">
             <div className="col-md-6 text-lg-start text-center">
-              <span className="impact--title"> Add a Service</span>
+              <span className="impact--title"> Edit a Service</span>
             </div>
             <div className="col-md-6 text-lg-end text-center pt-2">
               <span>
@@ -75,7 +85,7 @@ function EditServices() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Description</label>
                   <br />
-                  <ReactQuill theme="snow" value={values} onChange={setValues} className="my-2" />
+                  <ReactQuill theme="snow" value={description} onChange={setValues} className="my-2" />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Link</label>

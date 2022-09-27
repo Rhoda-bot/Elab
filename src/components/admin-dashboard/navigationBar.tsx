@@ -20,7 +20,9 @@ function NavigationBar() {
                 </b>
                 <b>
                   {' '}
-                  <span>Log out</span>
+                  <Link to="/auth/sign-in" className="link">
+                    <span>Log out</span>
+                  </Link>
                 </b>
               </ul>
             </form>

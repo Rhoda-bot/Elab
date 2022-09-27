@@ -21,7 +21,7 @@ function EditMentions() {
         setInputVals(res.data.data);
       }
     }).catch((err) => err);
-  });
+  }, [id]);
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

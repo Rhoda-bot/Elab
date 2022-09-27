@@ -2,9 +2,12 @@
 import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import DeleteItem from '../blogs/delete-blog';
 
 interface obj {
+  id: string,
  image: string,
  title: string,
  startDate: string,
@@ -24,50 +27,46 @@ function AdProject() {
   const navigate = useNavigate();
 
   const handleAddProject = () => {
-    navigate('/admin_dashboard/projects/add-projects');
-  };
-  const handleEditProject = () => {
-    navigate('/admin_dashboard/projects/edit-projects');
+    navigate('/admin_dashboard/add-projects');
   };
 
   return (
-    <>
-      <div className={(window.location.pathname.includes('add' || 'edit')) ? 'd-none' : 'blog'}>
-        <div className="blog">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6 text-lg-start text-center">
-                <span className="impact--title m-3"> Projects</span>
-              </div>
-              <div className="col-md-6 text-lg-end text-center">
-                <button className="impact--btn" type="button" onClick={handleAddProject}>Add a Project</button>
-              </div>
+    <div>
+      <div className="blog">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-lg-start text-center">
+              <span className="impact--title m-3"> Projects</span>
             </div>
-            <div className="row">
-              <div className="col-md-12 m-3">
-                <div className="card border-0 impact__card p-3">
-                  <div className="col-md-6 m-3">
-                    <div className="form-group has-search">
-                      <span className="fa fa-search form-control-feedback" />
-                      <input type="text" className="form-control" placeholder="Search" />
-                    </div>
+            <div className="col-md-6 text-lg-end text-center">
+              <button className="impact--btn" type="button" onClick={handleAddProject}>Add a Project</button>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 m-3">
+              <div className="card border-0 impact__card p-3">
+                <div className="col-md-6 m-3">
+                  <div className="form-group has-search">
+                    <span className="fa fa-search form-control-feedback" />
+                    <input type="text" className="form-control" placeholder="Search" />
                   </div>
-                  <div className="row">
-                    <table className="table table-borderless p-4">
-                      <thead>
-                        <tr>
-                          <th scope="col">S/N</th>
-                          <th scope="col">Image</th>
-                          <th scope="col">Project title</th>
-                          <th scope="col">Start date</th>
-                          <th scope="col">End date</th>
-                          <th scope="col">Created On</th>
-                        </tr>
-                      </thead>
-                      <tbody className="border-top m-3">
-                        {
+                </div>
+                <div className="row">
+                  <table className="table table-borderless p-4">
+                    <thead>
+                      <tr>
+                        <th scope="col">S/N</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Project title</th>
+                        <th scope="col">Start date</th>
+                        <th scope="col">End date</th>
+                        <th scope="col">Created On</th>
+                      </tr>
+                    </thead>
+                    <tbody className="border-top m-3">
+                      {
                     blogs?.map(({
-                      image, title, startDate, endDate, updatedAt,
+                      image, title, startDate, endDate, updatedAt, id,
                     }, index) => (
                       <tr key={index}>
                         <td>{index + 1}</td>
@@ -80,20 +79,27 @@ function AdProject() {
                         <td>
                           {updatedAt ? moment(updatedAt).format('LL') : false}
                         </td>
+                        <td>
+                          <Link to={`/admin_dashboard/edit-projects/${id}`}>
+                            <i className="fa-solid fa-pen-to-square" aria-hidden="true" />
+                          </Link>
+                        </td>
+                        <td>
+                          <i className="fa-solid fa-trash" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
+                        </td>
+                        <DeleteItem urlPath="projects" id={id} />
                       </tr>
                     ))
                   }
-                      </tbody>
-                    </table>
-                  </div>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Outlet />
-    </>
+    </div>
   );
 }
 export default AdProject;

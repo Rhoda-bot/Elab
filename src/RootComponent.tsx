@@ -60,6 +60,8 @@ import AddWorkspacePlan from './components/admin-dashboard/workspace/add-workspa
 import EditMentions from './components/admin-dashboard/media-mention/edit-mentions';
 import EditEvent from './components/admin-dashboard/events/edit-events';
 import EditVoluteer from './components/admin-dashboard/volunteer/edit-volunteer';
+import EditNonProfit from './components/admin-dashboard/non-profit/edit-nonprofit';
+import EditProject from './components/admin-dashboard/projects/edit-project';
 
 function RootComponent() {
   return (
@@ -108,9 +110,11 @@ function RootComponent() {
           <Route path="edit-media/:id" element={<EditMentions />} />
           <Route path="non-profit" element={<AdNonProfit />} />
           <Route path="add-non-profit" element={<AddNonProfit />} />
+          <Route path="edit-non-profit/:id" element={<EditNonProfit />} />
           <Route path="payments" element={<AdPayments />} />
           <Route path="projects" element={<AdProject />} />
           <Route path="add-projects" element={<AddProject />} />
+          <Route path="edit-projects" element={<EditProject />} />
 
           <Route path="resources" element={<AdResources />} />
           <Route path="add-resources" element={<AddResources />} />

@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useState } from 'react';
-import ReactQuill, { Quill } from 'react-quill';
+import React, { useEffect, useState } from 'react';
+import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useLocation } from 'react-router';
+import { useParams } from 'react-router';
 
 function EditProject() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
-  const location = useLocation();
   const [brochure, setBrochure] = useState('');
+  const { id } = useParams();
 
   const inputValues = {
     title: '',
@@ -36,7 +36,7 @@ function EditProject() {
     const {
       title, startDate, endDate,
     } = inputVal;
-    axios.post('projects', {
+    axios.patch(`projects/${id}`, {
       title, description: values, startDate, endDate, brochure, image,
     }).then((res) => {
       if (res) {
@@ -44,7 +44,13 @@ function EditProject() {
       }
     }).catch((err) => err);
   };
-
+  useEffect(() => {
+    axios.get(`projects/${id}`).then((res) => {
+      if (res.data.status.toString() === 'success') {
+        setInputVals(res.data.data);
+      }
+    }).catch((err) => err);
+  }, [id]);
   const {
     title, startDate, endDate,
   } = inputVal;

@@ -1,24 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useState } from 'react';
-import ReactQuill, { Quill } from 'react-quill';
+import React, { useEffect, useState } from 'react';
+import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useNavigate } from 'react-router';
+import { useParams } from 'react-router';
 
 function EditNonProfit() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
   const [pdfFile, setPdfFile] = useState('');
-  const [pdfError, setPdfError] = useState('');
-  const navigate = useNavigate();
+  const [feedback, setFeedBack] = useState('');
 
   const inputValues = {
     title: '',
     link: '',
+    description: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
-
+  const { id } = useParams();
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputVals({ ...inputVal, [name]: value });
@@ -30,37 +30,26 @@ function EditNonProfit() {
     if (selectedPdfFile) {
       setPdfFile(selectedPdfFile[0].name);
     }
-
-    // const fileType = ['application/pdf'];
-    // const selectedPdfFile = e?.target.files;
-    // if (selectedPdfFile) {
-    //   if (selectedPdfFile && fileType.includes(selectedPdfFile[0].type)) {
-    //     const reader = new FileReader();
-    //     reader.readAsDataURL(selectedPdfFile[0]);
-    //     reader.onloadend = (a: any) => {
-    //       setPdfFile(a.currentTarget.result);
-    //       setPdfError('');
-    //     };
-    //   } else {
-    //     setPdfFile(null);
-    //     setPdfError('Please set valid pdf file');
-    //   }
-    // } else {
-    //   console.log('select your file');
-    // }
   };
   const handleSubmit = () => {
     const { title, link } = inputVal;
-    axios.post('non-profits', {
+    axios.patch('non-profits', {
       title, description: values, pdfFile, image, link,
     }).then((res) => {
-      if (res) {
-        console.log(res.data);
+      if (res.data.data === 'success') {
+        setFeedBack('success');
       }
     }).catch((err) => err);
   };
+  useEffect(() => {
+    axios.get(`non-profits/${id}`).then((res) => {
+      if (res.data.status.toString() === 'success') {
+        setInputVals(res.data.data);
+      }
+    }).catch((err) => err);
+  }, [id]);
 
-  const { link, title } = inputVal;
+  const { link, title, description } = inputVal;
 
   return (
     <div className="addblog h-100">
@@ -96,7 +85,7 @@ function EditNonProfit() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Non-profit description</label>
                   <br />
-                  <ReactQuill theme="snow" value={values} onChange={setValues} className="my-2" />
+                  <ReactQuill theme="snow" value={description} onChange={setValues} className="my-2" />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Non-profit brochure</label>

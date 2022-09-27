@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../reuseables/footer';
 import Navbar from '../reuseables/navbar';
 
@@ -16,21 +16,25 @@ function SignUp() {
     occupation: '',
   };
   const [errorMessage, setErrorMessage] = useState<any>();
+  const [isLoading, setIsLoading] = useState(false);
   const [inputVal, setInputVals] = useState(inputValues);
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputVals({ ...inputVal, [name]: value });
   };
+  const navigate = useNavigate();
   const handleSubmit = () => {
     if ((inputVal.password !== inputVal.confirmPassword)) return setErrorMessage('password and confirm password must be same');
-    const form = new FormData();
-    form.append('name', inputVal.name);
-    form.append('email', inputVal.email);
-    form.append('password', inputVal.password);
-    form.append('confirmPassword', inputVal.confirmPassword);
-    form.append('phone', inputVal.phone);
-    form.append('occupation', inputVal.occupation);
-    axios.post('https://elab-api.herokuapp.com/api/v1/auth/register', form).then((res) => console.log(res.data)).catch((err) => console.log(err));
+    const {
+      name, email, password, confirmPassword, phone, occupation,
+    } = inputVal;
+    axios.post('auth/register', {
+      name, email, password, confirmPassword, phone, occupation,
+    }).then((res) => {
+      if (res.data.status === 'success') {
+        navigate('/user-dashboard');
+      }
+    }).catch((err) => console.log(err));
   };
   const {
     name, email, password, confirmPassword, phone, occupation,
@@ -69,11 +73,11 @@ function SignUp() {
                   </div>
                   <div className="py-2 px-lg-5">
                     <span>Password</span>
-                    <input type="text" name="password" value={password} onChange={handleOnChange} className="name p-3 my-2 content__form--input form-control" />
+                    <input type="password" name="password" value={password} onChange={handleOnChange} className="name p-3 my-2 content__form--input form-control" />
                   </div>
                   <div className="py-2 px-lg-5">
                     <span>Confirm Password</span>
-                    <input type="text" name="confirmPassword" value={confirmPassword} onChange={handleOnChange} className="name p-3 my-2 content__form--input form-control" />
+                    <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleOnChange} className="name p-3 my-2 content__form--input form-control" />
                   </div>
                   <div className="py-2 px-lg-5">
                     <span>

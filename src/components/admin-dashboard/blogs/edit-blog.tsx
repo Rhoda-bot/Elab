@@ -12,6 +12,7 @@ function EditBlog() {
     title: '',
     author: '',
     content: '',
+    tagg: [],
   };
   const [inputVal, setInputVals] = useState(inputValues);
   const [values, setValues] = useState('');
@@ -32,12 +33,11 @@ function EditBlog() {
 
   useEffect(() => {
     axios.get(`posts/${id}`).then((res) => {
-      // if (res.data.status.toString() === 'success') {
-      console.log(res.data.data);
-      // setInputVals(res.data.data);
-      // }
+      if (res.data.status.toString() === 'success') {
+        setInputVals(res.data.data);
+      }
     }).catch((err) => err);
-  });
+  }, [id]);
 
   const handleSubmit = () => {
     const { title, author, content } = inputVal;
@@ -50,6 +50,9 @@ function EditBlog() {
     }).catch((err) => err);
   };
 
+  const {
+    title, content, author, tagg,
+  } = inputVal;
   return (
     <div className="editblog">
       <div className="container py-lg-3">
@@ -72,7 +75,7 @@ function EditBlog() {
                   <input
                     type="text"
                     className="name p-3 my-2 content__form--input form-control"
-                    value={inputVal.title}
+                    value={title}
                     id="name"
                     onChange={handleOnChange}
                     name="title"
@@ -87,15 +90,15 @@ function EditBlog() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Author</label>
                   <br />
-                  <input type="text" className=" p-3 my-2 content__form--input form-control" onChange={handleOnChange} value={inputVal.author} name="author" required />
+                  <input type="text" className=" p-3 my-2 content__form--input form-control" onChange={handleOnChange} value={author} name="author" required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Contents</label>
                   <br />
-                  <ReactQuill theme="snow" value={inputVal.content} onChange={setValues} className="my-2" />
+                  <ReactQuill theme="snow" value={content} onChange={setValues} className="my-2" />
                 </div>
                 <div className="py-2">
-                  <Tag sendTags={setTags} tag={tags} />
+                  <Tag sendTags={setTags} tag={tagg} />
                 </div>
                 <div className="py-3 py-lg-4 px-0 mx-0">
                   <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>Save Event</button>

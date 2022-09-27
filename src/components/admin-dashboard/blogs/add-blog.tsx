@@ -4,14 +4,11 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useNavigate } from 'react-router';
-import { json } from 'stream/consumers';
 import Tag from './tags';
 
 function AddBlog() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
-  const navigate = useNavigate();
   const [tags, setTags] = useState<any>([]);
 
   const inputValues = {

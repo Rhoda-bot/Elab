@@ -19,10 +19,13 @@ interface obj {
 }
 function Blogs() {
   const [blogs, setBlogs] = useState<obj[]>();
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     axios.get('https://elab-api.herokuapp.com/api/v1/posts/').then((res) => {
       if (res.data.status.toString() === 'success') {
         setBlogs([...res.data.data, res.data.data]);
+      } else {
+        setIsLoading(true);
       }
     }).catch((err) => err);
   }, []);
@@ -67,6 +70,13 @@ function Blogs() {
                     </tr>
                   </thead>
                   <tbody className="border-top m-3">
+                    {isLoading && (
+                      <div className="d-flex justify-content-center">
+                        <div className="spinner-border" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                    )}
                     {
                    blogs?.map(({
                      id, image, title, author, createdAt,

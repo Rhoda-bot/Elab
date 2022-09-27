@@ -1,21 +1,32 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { useParams } from 'react-router';
 
 function AddEvent() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
+
   const inputValues = {
     title: '',
     date: '',
     link: '',
     price: '',
     tag: '',
+    description: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
+  const { id } = useParams();
+  useEffect(() => {
+    axios.get(`programs/${id}`).then((res) => {
+      if (res.data.status.toString() === 'success') {
+        setInputVals(res.data.data);
+      }
+    }).catch((err) => err);
+  });
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e?.target?.files;
     if (file) {
@@ -32,21 +43,14 @@ function AddEvent() {
     const {
       title, date, link, price, tag,
     } = inputVal;
-    console.log({
+    axios.patch('programs', {
       title, description: values, date, link, tag, price, image,
-    });
-    // axios.post('programs', {
-    //   title, description: values, date, link, tag, price, image,
-    // }).then((res) => {
-    //   if (res) {
-    //     console.log(res.data);
-    //   }
-    // }).catch((err) => err);
+    }).then((res) => {
+      if (res) {
+        console.log(res.data);
+      }
+    }).catch((err) => err);
   };
-
-  const {
-    title, tag, price, date, link,
-  } = inputVal;
 
   return (
     <div className="addblog h-100">
@@ -72,7 +76,7 @@ function AddEvent() {
                   <input
                     type="text"
                     className="name p-3 my-2 content__form--input form-control"
-                    value={title}
+                    value={inputVal.title}
                     id="name"
                     onChange={handleOnChange}
                     name="title"
@@ -82,12 +86,12 @@ function AddEvent() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Description</label>
                   <br />
-                  <ReactQuill theme="snow" value={values} onChange={setValues} className="my-2" />
+                  <ReactQuill theme="snow" value={inputVal.description} onChange={setValues} className="my-2" />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Link</label>
                   <br />
-                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="link" onChange={handleOnChange} value={link} required />
+                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="link" onChange={handleOnChange} value={inputVal.link} required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Image</label>
@@ -97,15 +101,15 @@ function AddEvent() {
                 <div className="row ">
                   <div className="col">
                     <span>Commencement Date</span>
-                    <input type="date" name="date" value={date} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
+                    <input type="date" name="date" value={inputVal.date} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
                   </div>
                   <div className="col">
                     <span>Event Price(₦)</span>
-                    <input type="text" name="price" value={price} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
+                    <input type="text" name="occupation" value={inputVal.price} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
                   </div>
                 </div>
                 <div className="py-2">
-                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="tag" onChange={handleOnChange} value={tag} required />
+                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="tag" onChange={handleOnChange} value={inputVal.tag} required />
                 </div>
                 <div className="py-3 py-lg-4 px-0 mx-0">
                   <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>Save Event</button>

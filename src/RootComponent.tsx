@@ -58,6 +58,8 @@ import AddStartupFoundary from './components/admin-dashboard/startup-foundary/ad
 import AddTraining from './components/admin-dashboard/trainings/add-training';
 import AddWorkspacePlan from './components/admin-dashboard/workspace/add-workspaceplan';
 import EditMentions from './components/admin-dashboard/media-mention/edit-mentions';
+import EditEvent from './components/admin-dashboard/events/edit-events';
+import EditVoluteer from './components/admin-dashboard/volunteer/edit-volunteer';
 
 function RootComponent() {
   return (
@@ -94,42 +96,34 @@ function RootComponent() {
         {/* //{ DASHBOARD ROUTES} // */}
         <Route path="/admin_dashboard" element={<AdminDashboard />}>
           <Route path="impact" element={<Impact />} />
-          <Route path="blog" element={<Blogs />}>
-            <Route path="add-blog" element={<AddBlog />} />
-            <Route path="edit-blog" element={<EditBlog />} />
-          </Route>
+          <Route path="blog" element={<Blogs />} />
+          <Route path="add-blog" element={<AddBlog />} />
+          <Route path="edit-blog/:id" element={<EditBlog />} />
           <Route path="consultation" element={<Consultations />} />
-          <Route path="consultation" element={<Consultations />} />
-          <Route path="events" element={<AdminEvents />}>
-            <Route path="add-events" element={<AddEvent />} />
-          </Route>
-          <Route path="media" element={<AdMediaMentions />}>
-            <Route path="add-media" element={<AddMentions />} />
-            <Route path="edit-media/:id" element={<EditMentions />} />
-          </Route>
-          <Route path="non-profit" element={<AdNonProfit />}>
-            <Route path="add-non-profit" element={<AddNonProfit />} />
-          </Route>
+          <Route path="events" element={<AdminEvents />} />
+          <Route path="add-events" element={<AddEvent />} />
+          <Route path="edit-events/:id" element={<EditEvent />} />
+          <Route path="media" element={<AdMediaMentions />} />
+          <Route path="add-media" element={<AddMentions />} />
+          <Route path="edit-media/:id" element={<EditMentions />} />
+          <Route path="non-profit" element={<AdNonProfit />} />
+          <Route path="add-non-profit" element={<AddNonProfit />} />
           <Route path="payments" element={<AdPayments />} />
-          <Route path="projects" element={<AdProject />}>
-            <Route path="add-projects" element={<AddProject />} />
-          </Route>
-          <Route path="resources" element={<AdResources />}>
-            <Route path="add-resources" element={<AddResources />} />
-          </Route>
-          <Route path="services" element={<AdServices />}>
-            <Route path="add-services" element={<AddServices />} />
-          </Route>
-          <Route path="startup" element={<AdStartupFoundary />}>
-            <Route path="add-startup" element={<AddStartupFoundary />} />
-          </Route>
-          <Route path="training" element={<AdTraining />}>
-            <Route path="add-training" element={<AddTraining />} />
-          </Route>
+          <Route path="projects" element={<AdProject />} />
+          <Route path="add-projects" element={<AddProject />} />
+
+          <Route path="resources" element={<AdResources />} />
+          <Route path="add-resources" element={<AddResources />} />
+          <Route path="services" element={<AdServices />} />
+          <Route path="add-services" element={<AddServices />} />
+          <Route path="startup" element={<AdStartupFoundary />} />
+          <Route path="add-startup" element={<AddStartupFoundary />} />
+          <Route path="training" element={<AdTraining />} />
+          <Route path="add-training" element={<AddTraining />} />
           <Route path="volunteers" element={<AdVolunteers />} />
-          <Route path="workspaces" element={<AdWorkPlans />}>
-            <Route path="add-workspaces" element={<AddWorkspacePlan />} />
-          </Route>
+          <Route path="edit-volunteer/:id" element={<EditVoluteer />} />
+          <Route path="workspaces" element={<AdWorkPlans />} />
+          <Route path="add-workspaces" element={<AddWorkspacePlan />} />
         </Route>
         {/* //{ DASHBOARD ROUTES} // */}
 

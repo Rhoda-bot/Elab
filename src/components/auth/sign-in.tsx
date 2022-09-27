@@ -10,6 +10,7 @@ function SignIn() {
     email: '',
     password: '',
   };
+  const [isLoading, setIsLoading] = useState(false);
   const [inputVal, setInputVals] = useState(inputValues);
   const navigate = useNavigate();
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,6 +18,7 @@ function SignIn() {
     setInputVals({ ...inputVal, [name]: value });
   };
   const handleSubmit = () => {
+    setIsLoading(true);
     const { email, password } = inputVal;
     axios.post('auth/login', { email, password }).then((res) => {
       if (res.data.status === 'success') {
@@ -53,7 +55,17 @@ function SignIn() {
                     </span>
                   </div>
                   <div className="py-3 py-lg-4 px-lg-5 px-0 mx-0">
-                    <button className="fw-bold py-3 px-5 me-0 content__form--btn" type="button" onClick={handleSubmit}>Login</button>
+                    <button className="fw-bold py-3 px-5 me-0 content__form--btn" type="button" onClick={handleSubmit}>
+                      {!isLoading && 'Login'}
+                      {isLoading && (
+                        <div className="d-flex justify-content-center">
+                          <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                          </div>
+                        </div>
+                      )}
+
+                    </button>
                   </div>
                   <div className="py-2 px-lg-5 text-dark">
                     Don't have an account?

@@ -2,8 +2,11 @@
 import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import DeleteItem from '../blogs/delete-blog';
 
 interface obj {
+  id: string,
  name: string,
  email: string,
  project: string,
@@ -56,20 +59,32 @@ function AdVolunteers() {
                     <tbody className="border-top m-3">
                       {
                     blogs?.map(({
-                      name, email, project, skills, updatedAt,
+
+                      name, email, project, skills, updatedAt, id,
                     }, index) => (
-                      <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>
-                          {name}
-                        </td>
-                        <td>{email}</td>
-                        <td>{project}</td>
-                        <td>{skills}</td>
-                        <td>
-                          {updatedAt ? moment(updatedAt).format('LL') : false}
-                        </td>
-                      </tr>
+                      <>
+                        <tr key={index}>
+                          <td>{index + 1}</td>
+                          <td>
+                            {name}
+                          </td>
+                          <td>{email}</td>
+                          <td>{project}</td>
+                          <td>{skills}</td>
+                          <td>
+                            {updatedAt ? moment(updatedAt).format('LL') : false}
+                          </td>
+                          <td>
+                            <Link to={`/admin_dashboard/edit-volunteer/${id}`} className="link">
+                              <i className="fa-solid fa-pen-to-square" aria-hidden="true" />
+                            </Link>
+                          </td>
+                          <td>
+                            <i className="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
+                          </td>
+                        </tr>
+                        <DeleteItem urlPath="posts" id={id} />
+                      </>
                     ))
                   }
                     </tbody>

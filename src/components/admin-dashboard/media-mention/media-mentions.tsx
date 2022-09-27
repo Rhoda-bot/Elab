@@ -15,10 +15,12 @@ updatedAt: string
 }
 function AdMediaMentions() {
   const [blogs, setBlogs] = useState<obj[]>();
+  let paramId : any;
   useEffect(() => {
     axios.get('https://elab-api.herokuapp.com/api/v1/mentions/').then((res) => {
       if (res.data.status.toString() === 'success') {
         setBlogs([...res.data.data, res.data.data]);
+        paramId = res.data.data.id;
       }
     }).catch((err) => err);
   }, []);
@@ -77,12 +79,12 @@ function AdMediaMentions() {
                           </td>
                           <td>
 
-                            <Link to={`/admin_dashboard/media/edit-media/${id}`}>
+                            <Link to={`/admin_dashboard/media/edit-media/${id}`} className="link">
                               <i className="fa-solid fa-pen-to-square" aria-hidden="true" />
                             </Link>
                           </td>
                           <td>
-                            <i className="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
+                            <i className="fa-solid fa-trash" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
                           </td>
                         </tr>
                         <DeleteItem urlPath="mentions" id={id} />

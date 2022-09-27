@@ -9,7 +9,8 @@ const root = createRoot(document.getElementById('root')!); // createRoot(contain
 axios.defaults.baseURL = 'https://elab-api.herokuapp.com/api/v1/';
 const getToken = JSON.stringify(localStorage.getItem('token'));
 axios.defaults.headers.common.Authorization = `Bearer ${getToken}`;
-axios.defaults.headers.post['Content-Type'] = 'application/form-data';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post.Accept = 'application/json';
 root.render(
   <React.StrictMode>
     <App />

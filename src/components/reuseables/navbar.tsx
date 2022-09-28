@@ -134,7 +134,7 @@ function Navbar() {
                         </div>
                         <div className="col-md-6 ">
                           <li className="navi__menu--item mb-2">
-                            <Link className="navi__menu--link p-2 px-2 w-100" to="/home_resources/consultation">
+                            <Link className="navi__menu--link p-2 px-2 w-100" to="/home_resources/ebook">
                               <span className="navi__menu--name"> Ebook</span>
                               <br />
                               <span className="navi__menu--text">A short description stays here</span>
@@ -143,7 +143,7 @@ function Navbar() {
                         </div>
                         <div className="col-md-6 ">
                           <li className="navi__menu--item mb-2">
-                            <Link className="navi__menu--link p-2 px-2 w-100" to="/">
+                            <Link className="navi__menu--link p-2 px-2 w-100" to="/home_resources/faqs">
                               <span className="navi__menu--name">FAQs</span>
                               <br />
                               <span className="navi__menu--text">A short description stays here</span>

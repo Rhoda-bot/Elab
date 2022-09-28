@@ -13,7 +13,7 @@ function ProjectCards() {
           <div className="col-md-4 col-lg-4  projectcards__description--card p-3">
             <div className="card border-0">
               <img src="/images/program/project1.png" alt="" className="img-fluid" />
-              <div className="card-img-overlay text-white d-flex flex-column justify-content-center ">
+              <div className="card-img-overlay text-white d-flex flex-column justify-content-center mt-3">
                 <h4 className="card-title">Project title goes here</h4>
                 <div className="link d-flex">
                   <button type="button">Learn more</button>

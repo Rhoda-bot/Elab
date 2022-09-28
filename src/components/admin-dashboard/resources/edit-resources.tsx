@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useLocation } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 
 function EditResources() {
   const [values, setValues] = useState('');
@@ -16,6 +16,7 @@ function EditResources() {
   const inputValues = {
     title: '',
     price: '',
+    description: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
 
@@ -35,12 +36,12 @@ function EditResources() {
     const val = event.target.value;
     setSelectedOption(val);
   };
-
+  const { id } = useParams();
   const handleSubmit = () => {
     const {
       title, price,
     } = inputVal;
-    axios.post('projects', {
+    axios.patch('resources', {
       title, description: values, brochure, image, price, selectedOption,
     }).then((res) => {
       if (res) {
@@ -48,6 +49,13 @@ function EditResources() {
       }
     }).catch((err) => err);
   };
+  useEffect(() => {
+    axios.get(`resources/${id}`).then((res) => {
+      if (res.data.status.toString() === 'success') {
+        setInputVals(res.data.data);
+      }
+    }).catch((err) => err);
+  }, [id]);
 
   const {
     title, price,

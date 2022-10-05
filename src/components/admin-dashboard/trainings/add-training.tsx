@@ -11,6 +11,8 @@ function AddTraining() {
   const [image, setImage] = useState('');
   const [pdfFile, setPdfFile] = useState('');
   const [pdfError, setPdfError] = useState('');
+  const [pdfs, setPdfs] = useState<any>();
+  const [fileimg, setFile] = useState<any>();
   const navigate = useNavigate();
 
   const inputValues = {
@@ -27,19 +29,27 @@ function AddTraining() {
     const file = e?.target?.files;
     if (file) {
       setImage(file[0].name);
+      setFile(file[0]);
     }
     const selectedPdfFile = e?.target.files;
     if (selectedPdfFile) {
       setPdfFile(selectedPdfFile[0].name);
+      setPdfs(selectedPdfFile[0]);
     }
   };
   const handleSubmit = () => {
     const {
       title, link, date, price,
     } = inputVal;
-    axios.post('trainings', {
-      title, description: values, date, link, brochure: pdfFile, price, image,
-    }).then((res) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('description', values);
+    formData.append('date', date);
+    formData.append('link', link);
+    formData.append('brochure', pdfs, pdfFile);
+    formData.append('price', price);
+    axios.post('trainings', formData).then((res) => {
       if (res) {
         console.log(res.data);
       }

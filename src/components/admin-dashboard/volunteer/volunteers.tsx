@@ -2,7 +2,7 @@
 import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DeleteItem from '../blogs/delete-blog';
 
 interface obj {
@@ -15,6 +15,10 @@ updatedAt: string
 }
 function AdVolunteers() {
   const [blogs, setBlogs] = useState<obj[]>();
+  const navigate = useNavigate();
+  const handleAddVolunteer = () => {
+    navigate('/admin_dashboard/add-volunteer');
+  };
   useEffect(() => {
     axios.get('https://elab-api.herokuapp.com/api/v1/volunteers/').then((res) => {
       if (res.data.status.toString() === 'success') {
@@ -32,7 +36,7 @@ function AdVolunteers() {
               <span className="impact--title m-3">Volunteers</span>
             </div>
             <div className="col-md-6 text-lg-end text-center">
-              <button type="button" className="impact--btn">Add a Volunteer</button>
+              <button type="button" className="impact--btn" onClick={handleAddVolunteer}>Add a Volunteer</button>
             </div>
           </div>
           <div className="row">
@@ -80,7 +84,7 @@ function AdVolunteers() {
                             </Link>
                           </td>
                           <td>
-                            <i className="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
+                            <i className="fa-solid fa-trash" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" />
                           </td>
                         </tr>
                         <DeleteItem urlPath="posts" id={id} />

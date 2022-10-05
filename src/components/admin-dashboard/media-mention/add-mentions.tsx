@@ -13,6 +13,7 @@ function AddMentions() {
     image: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
+  const [fileimg, setFile] = useState<any>();
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -20,6 +21,7 @@ function AddMentions() {
     const file = e.target?.files;
     if (file) {
       setImage(file[0].name);
+      setFile(file[0]);
     }
   };
 
@@ -27,9 +29,12 @@ function AddMentions() {
     const {
       title, date, link,
     } = inputVal;
-    axios.post('mentions', {
-      title, link, date, image,
-    }).then((res) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('date', date);
+    formData.append('link', link);
+    axios.post('mentions', formData).then((res) => {
       if (res) {
         console.log(res.data);
       }

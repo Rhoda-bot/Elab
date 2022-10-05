@@ -14,7 +14,7 @@ function AddServices() {
     link: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
-
+  const [fileimg, setFile] = useState<any>();
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputVals({ ...inputVal, [name]: value });
@@ -28,9 +28,12 @@ function AddServices() {
     const {
       title, link,
     } = inputVal;
-    axios.post('mentions', {
-      title, description: values, link, image,
-    }).then((res) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('description', values);
+    formData.append('link', link);
+    axios.post('mentions', formData).then((res) => {
       if (res) {
         console.log(res.data);
       }

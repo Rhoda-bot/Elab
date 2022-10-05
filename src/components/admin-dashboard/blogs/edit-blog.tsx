@@ -8,16 +8,16 @@ import Tag from './tags';
 
 function EditBlog() {
   const { id } = useParams();
-  const inputValues = {
+  const inputValues:any = {
     title: '',
     author: '',
     content: '',
-    tagg: [],
+    slug: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
-  const [tags, setTags] = useState<any>([]);
+  const [tag, setTags] = useState<any>([]);
 
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e?.target?.files;
@@ -32,26 +32,31 @@ function EditBlog() {
   };
 
   useEffect(() => {
-    axios.get(`posts/${id}`).then((res) => {
-      if (res.data.status.toString() === 'success') {
-        setInputVals(res.data.data);
-      }
+    axios.get('posts').then((res) => {
+      // if (res.data.status.toString() === 'success') {
+      const filtercurrentProject = res.data.data.filter((vals:any) => (vals.id === id));
+      setInputVals(filtercurrentProject[0]);
+      setValues(filtercurrentProject[0].content);
+      setTags(filtercurrentProject[0].tags);
+
+      // }
     }).catch((err) => err);
   }, [id]);
 
   const handleSubmit = () => {
-    const { title, author, content } = inputVal;
-    axios.patch(`posts/${id}`, {
-      title, image, author, content, tags,
-    }).then((res) => {
-      if (res) {
-        console.log(res.data);
-      }
-    }).catch((err) => err);
+    const {
+      title, author, content, slug,
+    } = inputVal;
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('author', author);
+    formData.append('content', content);
+    formData.append('tags', tag);
+    axios.patch(`posts/${slug}`, formData).then((res) => console.log(res.data)).catch((err) => err);
   };
 
   const {
-    title, content, author, tagg,
+    title, author,
   } = inputVal;
   return (
     <div className="editblog">
@@ -95,10 +100,10 @@ function EditBlog() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Contents</label>
                   <br />
-                  <ReactQuill theme="snow" value={content} onChange={setValues} className="my-2" />
+                  <ReactQuill theme="snow" value={values} onChange={setValues} className="my-2" />
                 </div>
                 <div className="py-2">
-                  <Tag sendTags={setTags} tag={tagg} />
+                  <Tag sendTags={setTags} tag={tag} />
                 </div>
                 <div className="py-3 py-lg-4 px-0 mx-0">
                   <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>Save Event</button>

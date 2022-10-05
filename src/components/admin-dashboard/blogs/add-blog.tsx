@@ -10,6 +10,7 @@ function AddBlog() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
   const [tags, setTags] = useState<any>([]);
+  const [fileimg, setFile] = useState<any>();
 
   const inputValues = {
     title: '',
@@ -20,6 +21,7 @@ function AddBlog() {
     const file = e?.target?.files;
     if (file) {
       setImage(file[0].name);
+      setFile(file[0]);
     }
   };
 
@@ -28,11 +30,15 @@ function AddBlog() {
     setInputVals({ ...inputVal, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any) => {
     const { title, author } = inputVal;
-    axios.post('posts', {
-      title, image, author, content: values, tags,
-    }).then((res) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('author', author);
+    formData.append('content', values);
+    formData.append('tags', tags);
+    axios.post('posts', formData).then((res) => {
       if (res) {
         console.log(res.data);
       }

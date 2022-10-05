@@ -11,13 +11,15 @@ function AddResources() {
   const [image, setImage] = useState('');
   const location = useLocation();
   const [brochure, setBrochure] = useState('');
-  const [selectedOption, setSelectedOption] = useState<string>();
+  const [selectedOption, setSelectedOption] = useState<any>();
+  const [fileimg, setFile] = useState<any>();
 
   const inputValues = {
     title: '',
     price: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
+  const [pdfs, setPdfs] = useState<any>();
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -25,10 +27,12 @@ function AddResources() {
     const file = e?.target?.files;
     if (file) {
       setImage(file[0].name);
+      setFile(file[0]);
     }
     const selectedPdfFile = e?.target.files;
     if (selectedPdfFile) {
       setBrochure(selectedPdfFile[0].name);
+      setPdfs(selectedPdfFile[0]);
     }
   };
   const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -40,6 +44,13 @@ function AddResources() {
     const {
       title, price,
     } = inputVal;
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('description', values);
+    formData.append('brochure', pdfs, brochure);
+    formData.append('price', price);
+    formData.append('selectedOption', selectedOption);
     axios.post('projects', {
       title, description: values, brochure, image, price, selectedOption,
     }).then((res) => {

@@ -64,6 +64,7 @@ import EditNonProfit from './components/admin-dashboard/non-profit/edit-nonprofi
 import EditProject from './components/admin-dashboard/projects/edit-project';
 import EditServices from './components/admin-dashboard/services/edit-services';
 import EditResources from './components/admin-dashboard/resources/edit-resources';
+import AddVoluteer from './components/admin-dashboard/volunteer/add-volunteer';
 
 function RootComponent() {
   return (
@@ -130,6 +131,7 @@ function RootComponent() {
           <Route path="add-training" element={<AddTraining />} />
           <Route path="edit-trainings/:id" element={<AddTraining />} />
           <Route path="volunteers" element={<AdVolunteers />} />
+          <Route path="add-volunteer" element={<AddVoluteer />} />
           <Route path="edit-volunteer/:id" element={<EditVoluteer />} />
           <Route path="workspaces" element={<AdWorkPlans />} />
           <Route path="add-workspaces" element={<AddWorkspacePlan />} />

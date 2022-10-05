@@ -42,7 +42,7 @@ function EditNonProfit() {
     }).catch((err) => err);
   };
   useEffect(() => {
-    axios.get(`non-profits/${id}`).then((res) => {
+    axios.get('non-profits').then((res) => {
       if (res.data.status.toString() === 'success') {
         setInputVals(res.data.data);
       }

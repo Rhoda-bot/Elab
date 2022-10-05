@@ -10,7 +10,9 @@ function AddNonProfit() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
   const [pdfFile, setPdfFile] = useState('');
+  const [pdfs, setPdfs] = useState<any>();
   const [pdfError, setPdfError] = useState('');
+  const [fileimg, setFile] = useState<any>();
   const navigate = useNavigate();
 
   const inputValues = {
@@ -25,20 +27,22 @@ function AddNonProfit() {
     const file = e?.target?.files;
     if (file) {
       setImage(file[0].name);
+      setFile(file[0]);
     }
     const selectedPdfFile = e?.target.files;
     if (selectedPdfFile) {
       setPdfFile(selectedPdfFile[0].name);
+      setPdfs(selectedPdfFile[0]);
     }
 
     // const fileType = ['application/pdf'];
     // const selectedPdfFile = e?.target.files;
     // if (selectedPdfFile) {
     //   if (selectedPdfFile && fileType.includes(selectedPdfFile[0].type)) {
-    //     const reader = new FileReader();
-    //     reader.readAsDataURL(selectedPdfFile[0]);
-    //     reader.onloadend = (a: any) => {
-    //       setPdfFile(a.currentTarget.result);
+    // const reader = new FileReader();
+    // reader.readAsDataURL(selectedPdfFile[0]);
+    // reader.onloadend = (a: any) => {
+    //   setPdfFile(a.currentTarget.result);
     //       setPdfError('');
     //     };
     //   } else {
@@ -51,9 +55,13 @@ function AddNonProfit() {
   };
   const handleSubmit = () => {
     const { title, link } = inputVal;
-    axios.post('non-profits', {
-      title, description: values, pdfFile, image, link,
-    }).then((res) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('description', values);
+    formData.append('pdfFile', pdfs, pdfFile);
+    formData.append('link', link);
+    axios.post('non-profits', formData).then((res) => {
       if (res) {
         console.log(res.data);
       }
@@ -101,17 +109,17 @@ function AddNonProfit() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Non-profit brochure</label>
                   <br />
-                  <input type="file" className="name p-3 my-2 content__form--input form-control" id="image" onChange={handleOnChange} required />
+                  <input type="file" className="name p-3 my-2 content__form--input form-control" onChange={handleOnChange} required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Non-profit Image</label>
                   <br />
-                  <input type="file" className="name p-3 my-2 content__form--input form-control" id="image" onChange={handleOnChange} required />
+                  <input type="file" className="name p-3 my-2 content__form--input form-control" onChange={handleOnChange} required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Non-profit website link</label>
                   <br />
-                  <input type="text" className="name p-3 my-2 content__form--input form-control" id="name" name="" onChange={handleOnChange} value={link} required />
+                  <input type="text" className="name p-3 my-2 content__form--input form-control" name="link" onChange={handleOnChange} value={link} required />
                 </div>
                 <div className="py-3 py-lg-4 px-0 mx-0">
                   <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>publish</button>

@@ -5,12 +5,14 @@ import React, { useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useLocation } from 'react-router';
+import { start } from 'repl';
 
 function AddProject() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
   const location = useLocation();
   const [brochure, setBrochure] = useState('');
+  const [fileimg, setFile] = useState<any>();
 
   const inputValues = {
     title: '',
@@ -18,6 +20,7 @@ function AddProject() {
     endDate: '',
   };
   const [inputVal, setInputVals] = useState(inputValues);
+  const [pdfs, setPdfs] = useState<any>();
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -25,10 +28,12 @@ function AddProject() {
     const file = e?.target?.files;
     if (file) {
       setImage(file[0].name);
+      setFile(file[0]);
     }
     const selectedPdfFile = e?.target.files;
     if (selectedPdfFile) {
       setBrochure(selectedPdfFile[0].name);
+      setPdfs(selectedPdfFile[0]);
     }
   };
 
@@ -36,9 +41,14 @@ function AddProject() {
     const {
       title, startDate, endDate,
     } = inputVal;
-    axios.post('projects', {
-      title, description: values, startDate, endDate, brochure, image,
-    }).then((res) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('description', values);
+    formData.append('startDate', startDate);
+    formData.append('endDate', endDate);
+    formData.append('brochure', pdfs, brochure);
+    axios.post('projects', formData).then((res) => {
       if (res) {
         console.log(res.data);
       }

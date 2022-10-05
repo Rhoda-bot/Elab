@@ -16,10 +16,11 @@ function EditMentions() {
   const [inputVal, setInputVals] = useState(inputValues);
   const { id } = useParams();
   useEffect(() => {
-    axios.get(`mentions/${id}`).then((res) => {
-      if (res.data.status.toString() === 'success') {
-        setInputVals(res.data.data);
-      }
+    axios.get('mentions').then((res) => {
+      // if (res.data.status.toString() === 'success') {
+      const filtercurrentProject = res.data.data.filter((vals:any) => (vals.id === id));
+      setInputVals(filtercurrentProject[0]);
+      // }
     }).catch((err) => err);
   }, [id]);
 

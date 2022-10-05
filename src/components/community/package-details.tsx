@@ -63,7 +63,7 @@ function PackageDetails() {
                       </span>
                     </div>
                   </div>
-                  <button type="button">
+                  <button type="button" className="packagedetails--btn">
                     <Link to={`/programs/packages-details/${param.id}/payment`} className="link"> Make Payment</Link>
                   </button>
                 </div>

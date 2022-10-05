@@ -70,7 +70,7 @@
      
     },
     {
-        "id": 10,
+        "id": 13,
         "title": "Payments",
         "icon": "fa-solid fa-ranking-star fa-fw",
          "link": "/admin_dashboard/payments"

@@ -725,6 +725,13 @@
         color: #BDBDBD;
         text-decoration: line-through;
     }
+    &--btn{
+        @include Btn(7px, 192px, 50px, 600);
+        margin-top: 30px;
+    }
+    &--btn:hover{
+        @include BtnHover;
+    }
 }
 // PACKAGEDETAILS ENDS //
 

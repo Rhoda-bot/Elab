@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import React, { useState } from 'react';
 import Tag from '../blogs/tags';
 
-function EditVoluteer() {
-  const { id } = useParams();
+function AddVoluteer() {
   const inputValues = {
     name: '',
     email: '',
@@ -13,40 +11,34 @@ function EditVoluteer() {
   };
   const [inputVal, setInputVals] = useState(inputValues);
   const [tags, setTags] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputVals({ ...inputVal, [name]: value });
   };
 
-  useEffect(() => {
-    axios.get(`volunteers/${id}`).then((res) => {
-      if (res.data.status.toString() === 'success') {
-        setInputVals(res.data.data);
-        setTags(res.data.data.skills);
-      }
-    }).catch((err) => err);
-  });
-
   const handleSubmit = () => {
+    setIsLoading(true);
     const {
       name, email, project,
     } = inputVal;
-    const formData = new FormData();
-    formData.append('title', name);
-    formData.append('email', email);
-    formData.append('project', project);
-    formData.append('skills', tags);
-    axios.patch(`volunteers/${id}`, formData).then((res) => {
-      console.log(res.data);
-    });
+    axios.post('volunteers', {
+      name, email, project, skills: tags,
+    }).then((res) => {
+      if (res.data.status === 'success') {
+        setIsLoading(false);
+        // setInputVals();
+      }
+    }).catch((err) => console.log(err));
   };
+  const { name, email, project } = inputVal;
   return (
     <div className="editblog">
       <div className="container py-lg-3">
         <div className="row">
           <div className="col-md-6 text-lg-start text-center">
-            <span className="impact--title m-3"> Edit a Volunteer</span>
+            <span className="impact--title m-3"> Add a Volunteer</span>
           </div>
           <div className="col-md-6 text-lg-end text-center pt-2">
             <span>
@@ -58,12 +50,12 @@ function EditVoluteer() {
             <div className="content__card w-100 p-5">
               <form className="content__form mx-5">
                 <div className="py-2">
-                  <label htmlFor="name" className="p-0 fw-bold">Title</label>
+                  <label htmlFor="name" className="p-0 fw-bold">Name</label>
                   <br />
                   <input
                     type="text"
                     className="name p-3 my-2 content__form--input form-control"
-                    value={inputVal.name}
+                    value={name}
                     id="name"
                     onChange={handleOnChange}
                     name="name"
@@ -71,14 +63,14 @@ function EditVoluteer() {
                   />
                 </div>
                 <div className="py-2">
-                  <label htmlFor="name" className="p-0 fw-bold">Author</label>
+                  <label htmlFor="name" className="p-0 fw-bold">Email</label>
                   <br />
-                  <input type="text" className=" p-3 my-2 content__form--input form-control" onChange={handleOnChange} value={inputVal.email} name="author" required />
+                  <input type="text" className=" p-3 my-2 content__form--input form-control" onChange={handleOnChange} value={email} name="email" required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Project</label>
                   <br />
-                  <input type="text" className=" p-3 my-2 content__form--input form-control" onChange={handleOnChange} value={inputVal.project} name="author" required />
+                  <input type="text" className=" p-3 my-2 content__form--input form-control" onChange={handleOnChange} value={project} name="project" required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Skills</label>
@@ -86,7 +78,16 @@ function EditVoluteer() {
                   <Tag sendTags={setTags} tag={tags} />
                 </div>
                 <div className="py-3 py-lg-4 px-0 mx-0">
-                  <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>publish</button>
+                  <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>
+                    {!isLoading && 'Publish'}
+                    {isLoading && (
+                    <div className="d-flex justify-content-center">
+                      <div className="spinner-border" role="status">
+                        <span className="visually-hidden">posting...</span>
+                      </div>
+                    </div>
+                    )}
+                  </button>
                 </div>
               </form>
             </div>
@@ -96,4 +97,4 @@ function EditVoluteer() {
     </div>
   );
 }
-export default EditVoluteer;
+export default AddVoluteer;

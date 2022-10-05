@@ -10,7 +10,7 @@ function AddEvent() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
 
-  const inputValues = {
+  const inputValues: any = {
     title: '',
     date: '',
     link: '',
@@ -21,10 +21,11 @@ function AddEvent() {
   const [inputVal, setInputVals] = useState(inputValues);
   const { id } = useParams();
   useEffect(() => {
-    axios.get(`programs/${id}`).then((res) => {
-      if (res.data.status.toString() === 'success') {
-        setInputVals(res.data.data);
-      }
+    axios.get('programs').then((res) => {
+      // if (res.data.status.toString() === 'success') {
+      const filtercurrentProject = res.data.data.filter((vals:any) => (vals.id === id));
+      setInputVals(filtercurrentProject[0]);
+      // }
     }).catch((err) => err);
   });
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,16 +42,26 @@ function AddEvent() {
 
   const handleSubmit = () => {
     const {
-      title, date, link, price, tag,
+      title, date, link, price, tag, description,
     } = inputVal;
-    axios.patch('programs', {
-      title, description: values, date, link, tag, price, image,
-    }).then((res) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('date', date);
+    formData.append('link', link);
+    formData.append('price', price);
+    if (image) {
+      formData.append('image', image);
+    }
+    axios.patch('programs', formData).then((res) => {
       if (res) {
         console.log(res.data);
       }
     }).catch((err) => err);
   };
+  const {
+    title, date, link, price, description, tag,
+  } = inputVal;
 
   return (
     <div className="addblog h-100">
@@ -76,7 +87,7 @@ function AddEvent() {
                   <input
                     type="text"
                     className="name p-3 my-2 content__form--input form-control"
-                    value={inputVal.title}
+                    value={title}
                     id="name"
                     onChange={handleOnChange}
                     name="title"
@@ -86,12 +97,12 @@ function AddEvent() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Description</label>
                   <br />
-                  <ReactQuill theme="snow" value={inputVal.description} onChange={setValues} className="my-2" />
+                  <ReactQuill theme="snow" value={description} onChange={setValues} className="my-2" />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Link</label>
                   <br />
-                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="link" onChange={handleOnChange} value={inputVal.link} required />
+                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="link" onChange={handleOnChange} value={link} required />
                 </div>
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Image</label>
@@ -101,15 +112,15 @@ function AddEvent() {
                 <div className="row ">
                   <div className="col">
                     <span>Commencement Date</span>
-                    <input type="date" name="date" value={inputVal.date} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
+                    <input type="date" name="date" value={date} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
                   </div>
                   <div className="col">
                     <span>Event Price(₦)</span>
-                    <input type="text" name="occupation" value={inputVal.price} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
+                    <input type="text" name="occupation" value={price} onChange={handleOnChange} className="p-3 my-2 content__form--input form-control" required />
                   </div>
                 </div>
                 <div className="py-2">
-                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="tag" onChange={handleOnChange} value={inputVal.tag} required />
+                  <input type="text" className="p-3 my-2 content__form--input form-control" id="name" name="tag" onChange={handleOnChange} value={tag} required />
                 </div>
                 <div className="py-3 py-lg-4 px-0 mx-0">
                   <button className="fw-bold py-3 px-5 content__form--btn" type="button" onClick={handleSubmit}>Save Event</button>

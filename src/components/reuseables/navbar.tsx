@@ -27,7 +27,7 @@ function Navbar() {
                       <div className="row">
                         <div className="col-md-6 mb-2">
                           <li className="navi__menu--item">
-                            <Link className="navi__menu--link p-2 px-2 w-100" to="/programs">
+                            <Link className="navi__menu--link p-2 px-2 w-100" to="/programs/community">
                               <span className="navi__menu--name">Community</span>
                               <br />
                               <span className="navi__menu--text">A  short description stays here</span>

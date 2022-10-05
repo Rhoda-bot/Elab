@@ -8,6 +8,7 @@ import 'react-quill/dist/quill.snow.css';
 function AddEvent() {
   const [values, setValues] = useState('');
   const [image, setImage] = useState('');
+  const [fileimg, setFile] = useState<any>();
   const inputValues = {
     title: '',
     date: '',
@@ -20,6 +21,7 @@ function AddEvent() {
     const file = e?.target?.files;
     if (file) {
       setImage(file[0].name);
+      setFile(file[0]);
     }
   };
 
@@ -32,16 +34,19 @@ function AddEvent() {
     const {
       title, date, link, price, tag,
     } = inputVal;
-    console.log({
-      title, description: values, date, link, tag, price, image,
-    });
-    // axios.post('programs', {
-    //   title, description: values, date, link, tag, price, image,
-    // }).then((res) => {
-    //   if (res) {
-    //     console.log(res.data);
-    //   }
-    // }).catch((err) => err);
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('image', fileimg, image);
+    formData.append('description', values);
+    formData.append('date', date);
+    formData.append('link', link);
+    formData.append('tag', tag);
+    formData.append('price', price);
+    axios.post('programs', formData).then((res) => {
+      if (res) {
+        console.log(res.data);
+      }
+    }).catch((err) => err);
   };
 
   const {

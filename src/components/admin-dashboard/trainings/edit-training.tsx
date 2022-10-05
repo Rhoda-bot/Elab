@@ -47,10 +47,14 @@ function EditTraining() {
   };
   const { id } = useParams();
   useEffect(() => {
-    axios.get(`trainings/${id}`).then((res) => {
-      if (res.data.status.toString() === 'success') {
-        setInputVals(res.data.data);
-      }
+    axios.get('trainings').then((res) => {
+      const filtercurrentProject = res.data.data.filter((vals:any) => (vals.id === id));
+      setInputVals(filtercurrentProject[0]);
+      console.log(inputVal);
+
+      // if (res.data.status.toString() === 'success') {
+      //   setInputVals(res.data.data);
+      // }
     }).catch((err) => err);
   }, [id]);
 

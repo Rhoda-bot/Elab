@@ -16,8 +16,10 @@ function EditProject() {
     title: '',
     startDate: '',
     endDate: '',
+    description: '',
   };
-  const [inputVal, setInputVals] = useState(inputValues);
+  const [inputVal, setInputVals] = useState<any>(inputValues);
+  const [currentProject, setCurrentProject] = useState<any>();
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -45,14 +47,16 @@ function EditProject() {
     }).catch((err) => err);
   };
   useEffect(() => {
-    axios.get(`projects/${id}`).then((res) => {
+    axios.get('projects').then((res) => {
       if (res.data.status.toString() === 'success') {
-        setInputVals(res.data.data);
+        const filtercurrentProject = res.data.data.filter((vals:any) => (vals.id === id));
+        setInputVals(filtercurrentProject[0]);
+        console.log(inputVal);
       }
     }).catch((err) => err);
   }, [id]);
   const {
-    title, startDate, endDate,
+    title, startDate, endDate, description,
   } = inputVal;
 
   return (
@@ -89,7 +93,7 @@ function EditProject() {
                 <div className="py-2">
                   <label htmlFor="name" className="p-0 fw-bold">Description</label>
                   <br />
-                  <ReactQuill theme="snow" value={values} onChange={setValues} className="my-2" />
+                  <ReactQuill theme="snow" value={description} onChange={setValues} className="my-2" />
                 </div>
                 <div className="row ">
                   <div className="col">
